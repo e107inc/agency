@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e107Theme name="Agency" version="2.0.0" date="2017-01-18" compatibility="2.1.4">
+	<author name ="Jimako" email="" url="http://e107.sk" />
+	<summary>Start Bootstrap - Agency Bootstrap 4 e107 theme</summary>
+	<description>Agency is a one page agency portfolio theme for Bootstrap created by Start Bootstrap. This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a responsive timeline, and a working PHP contact form.</description>
+	<category>generic</category>
+	<plugins>
+		<plugin name='featurebox' url='core' />
+		<plugin name='gallery' url='core' />
+    <plugin name='rss_menu' url='core' />
+		<plugin name='social' url='core' />
+	</plugins>
+	<keywords>
+		<word>bootstrap</word>
+		<word>clean</word>
+		<word>business</word>
+	</keywords>
+	<screenshots>
+		<image>preview_frontend.png</image>
+	</screenshots>
+	<stylesheets>
+		<css file="style.css" name="Default"  />
+	</stylesheets>
+	<layouts>
+		<layout name='homepage' title='Homepage Option 1'  >
+			<custompages>FRONTPAGE</custompages>	
+		</layout>
+     <layout name='full' title='Full width page' >
+			<custompages>login</custompages>
+		</layout>
+		<layout name='sidebar_right' title='Blog sidebar-right' default='true'   >
+			<custompages>/news</custompages>	
+		</layout>
+	</layouts>
+</e107Theme>

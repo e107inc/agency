@@ -1,0 +1,18 @@
+
+## Version 2.0.0.0 – December 18th, 2016
+Comparation with bootstrap 3 theme:
+- Rewritten {BOOTSTRAP_USERNAV}  - used a lot of variables to understand how it should work, before taken for granted
+- Rewritten navigation_template.php (main, footer)
+- Removed glyphicon support (not supported in Bootstrap 4)
+
+Standard theme developing:
+- Implemented header + footer css and scripts
+- Changed combination {NAVIGATION} + {BOOTSTRAP_USERNAV} - usernav links are part of navbar, not separate navigation (there was always problem with styling)
+- Implemented Book/Chapter system for Portfolio/Projects - only porfolio template is needed to set for book
+- Implemented Modal portfolio (displayed pages)
+- Theme shortcode XURL_ICONS
+- Standard site disclaimer
+- Theme preferencies CDN/localhost
+
+# e107-Startbootstrap-Agency-theme-bootstrap-4-version
+Startbootstrap Freelancer theme from https://startbootstrap.com/template-overviews/agency/ ported for e107 bootstrap CMS
