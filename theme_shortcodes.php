@@ -146,7 +146,7 @@ class theme_shortcodes extends e_shortcode
 		}
 		else
 		{
-			$text = 'No Portfolio items';
+			$text = LAN_AG_THEME_14;
 		}
 
 		$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
@@ -179,7 +179,7 @@ class theme_shortcodes extends e_shortcode
 		}
 		else
 		{
-			$text = 'No Portfolio items';
+			$text = LAN_AG_THEME_14;
 		}
 
 		$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
@@ -304,7 +304,7 @@ class theme_shortcodes extends e_shortcode
 		else
 		{
 		    $text = "
-		    <div class='alert alert-info alert-block text-center'>No members</div>
+		    <div class='alert alert-info alert-block text-center'>".LAN_AG_THEME_15."</div>
 		    ";
 		}  
 	 
