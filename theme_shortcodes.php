@@ -146,7 +146,7 @@ class theme_shortcodes extends e_shortcode
 		}
 		else
 		{
-			$text = 'No Portfolio items';
+			$text = LAN_AG_THEME_14;
 		}
 
 		$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
@@ -189,7 +189,19 @@ class theme_shortcodes extends e_shortcode
 
 	}
 
-
+function sc_sitedisclaimer($copyYear = NULL)
+	{
+		$default = "Proudly powered by <a href='http://e107.org'>e107</a> which is released under the terms of the GNU GPL License.";
+		$sitedisclaimer = deftrue('SITEDISCLAIMER',$default);
+ 
+    $copyYear = vartrue($copyYear,'2013');
+	  $curYear = date('Y'); 
+	  $text = '&copy; '. $copyYear . (($copyYear != $curYear) ? ' - ' . $curYear : '');
+ 
+	  $text .= ' '.$sitedisclaimer;        
+		return e107::getParser()->toHtml($text, true, 'SUMMARY');	
+	}	
+	
 	//@todo if this is done often, sc_xurl_icons() needs a template.
 	/* what is rewritten with this: 
 	- set of use google or google-plus as key
