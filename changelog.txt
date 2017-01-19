@@ -1,3 +1,8 @@
+## Version 2.0.0.1 – January 19th, 2017
+Standard theme developing:
+- Added Services section
+- Added Theme Shortcode for insert only glyph name (f.e. fa-shopping) as menu text
+
 
 ## Version 2.0.0.0 – January 18th, 2017
 Comparation with bootstrap 3 theme:

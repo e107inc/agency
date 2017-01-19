@@ -161,7 +161,7 @@ function tablestyle($caption, $text, $id='', $info=array())
 
 	if($style == 'notitle')
 	{
-	  echo $text;
+	  echo str_replace(array("<p>","</p>"), "", $text);
 		return;
 	}
 
@@ -247,43 +247,32 @@ $LAYOUT['homepage'] =  '
 <div class="container">
   {ALERTS}
 </div>
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-xs-center">
-                    <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row text-xs-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
+
+<!-- Services Section -->
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-xs-center">
+                {SETSTYLE=notitle}
+                {MENU=1}
             </div>
         </div>
-    </section>
+        <div class="row text-xs-center">
+            <div class="col-md-4">
+                {SETSTYLE=notitle}
+                {MENU=11}
+            </div>
+            <div class="col-md-4">
+                {SETSTYLE=notitle}
+                {MENU=12}
+            </div>
+            <div class="col-md-4">
+                {SETSTYLE=notitle}
+                {MENU=13}
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Portfolio Grid Section -->
     
 {PORTFOLIOITEMS}

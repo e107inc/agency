@@ -255,6 +255,14 @@ class theme_shortcodes extends e_shortcode
 
 	}
 
+	/* WORKAROUND for using just icon name */
+	function sc_cmenu_button_text()
+  {
+    $sc   = e107::getScBatch('page', null, 'cpage');
+    $data = $sc->getVars();
+    return vartrue($data['menu_button_text'],'');
+   }
+ 
 }
 
 ?>

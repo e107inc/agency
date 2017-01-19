@@ -44,10 +44,23 @@
 													       '; 
 	$MENU_TEMPLATE['2-column_2:1_text-left']['end'] 	= '';  
  
+	$MENU_TEMPLATE['home-services-introduction']['start'] 			= '<div class="col-lg-12 text-xs-center">'; 
+	$MENU_TEMPLATE['home-services-introduction']['body'] 				= 
+									'<h2 class="section-heading">{CMENUTITLE}</h2>
+									<h3 class="section-subheading text-muted">{CMENUBODY}</h3>';
+	$MENU_TEMPLATE['home-services-introduction']['end'] 				= '</div>';
+
+            
+
+	$MENU_TEMPLATE['home-services']['start'] 			= 
+	'<span class="fa-stack fa-4x">
+	<i class="fa fa-circle fa-stack-2x text-primary"></i>
+	<i class="fa {CMENU_BUTTON_TEXT} fa-stack-1x fa-inverse"></i>
+	</span>'; 
+	$MENU_TEMPLATE['home-services']['body'] 				= '<h4 class="service-heading">{CMENUTITLE}</h4>
+	<p class="text-muted">{CMENUBODY}';
+	$MENU_TEMPLATE['home-services']['end'] 				= ' '; 
  
- 
-       
-         
-	
+ 	
 	
 ?>
