@@ -149,7 +149,7 @@ function tablestyle($caption, $text, $id='', $info=array())
 		return;
 		
 	}	
-
+	
 	if($style == 'portfolio')
 	{
 		 echo '
@@ -370,33 +370,15 @@ $LAYOUT['homepage'] =  '
         </div>
     </section>
 
-    <!-- Clients Aside -->
-    <aside class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="'.$imagepath.'logos/envato.jpg" class="img-fluid img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="'.$imagepath.'logos/designmodo.jpg" class="img-fluid img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="'.$imagepath.'logos/themeforest.jpg" class="img-fluid img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="'.$imagepath.'logos/creative-market.jpg" class="img-fluid img-centered" alt="">
-                    </a>
-                </div>
-            </div>
+<!-- Clients Aside Section N. 5 -->
+<aside class="clients">
+    <div class="container">
+        <div class="row">
+            {SETSTYLE=notitle}
+            {GALLERY_PORTFOLIO=gallery_image_2}             
         </div>
-    </aside>
+    </div>
+</aside>
 
     <!-- Contact Section -->
     <section id="contact">
