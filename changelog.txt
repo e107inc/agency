@@ -1,3 +1,6 @@
+## Version 2.0.0.2 –
+TODO:   ajax on contact form 
+
 ## Version 2.0.0.1 – January 19th, 2017
 Standard theme developing:
 - Added Services section
@@ -9,14 +12,15 @@ Standard theme developing:
 - Cleaned portfolio shortcode
 - Added clients section using {GALLERY_PORTFOLIO} - {SETSTYLE} is ignored with this shortcode
 - Attempt to add teammembers
+- Moved text from end of timeline to theme prefs
+- Moved text from end of teammembers to theme prefs
+- Moved bg image from style.css to theme prefs 
+- Added shortcode for contact form
 
 Comparation with bootstrap 3 theme:
 - Missing: img-fluid instead img-responsive with BT4 defined
 - Missing: img-fluid rounded-circle with BT4 defined  -  to_avatar()
 
-TODO:  
-put text from end of timeline to theme prefs
-put text from end of teammembers to theme prefs
 
 ## Version 2.0.0.0 – January 18th, 2017
 Comparation with bootstrap 3 theme:
