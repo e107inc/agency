@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<e107Export version="2.1.4 (git)" timestamp="1484826957" >
+	<database>
+	<dbTable name="menus">
+		<item>
+			<field name="menu_id">212</field>
+			<field name="menu_name">home-services-introduction</field>
+			<field name="menu_location">1</field>
+			<field name="menu_order">1</field>
+			<field name="menu_class">0</field>
+			<field name="menu_pages"></field>
+			<field name="menu_path">31</field>
+			<field name="menu_layout">homepage</field>
+			<field name="menu_parms"></field>
+		</item>
+		<item>
+			<field name="menu_id">216</field>
+			<field name="menu_name">home-service-1</field>
+			<field name="menu_location">11</field>
+			<field name="menu_order">1</field>
+			<field name="menu_class">0</field>
+			<field name="menu_pages"></field>
+			<field name="menu_path">32</field>
+			<field name="menu_layout">homepage</field>
+			<field name="menu_parms"></field>
+		</item>
+		<item>
+			<field name="menu_id">217</field>
+			<field name="menu_name">home-service-2</field>
+			<field name="menu_location">12</field>
+			<field name="menu_order">1</field>
+			<field name="menu_class">0</field>
+			<field name="menu_pages"></field>
+			<field name="menu_path">33</field>
+			<field name="menu_layout">homepage</field>
+			<field name="menu_parms"></field>
+		</item>
+		<item>
+			<field name="menu_id">218</field>
+			<field name="menu_name">home-service-3</field>
+			<field name="menu_location">13</field>
+			<field name="menu_order">1</field>
+			<field name="menu_class">0</field>
+			<field name="menu_pages"></field>
+			<field name="menu_path">34</field>
+			<field name="menu_layout">homepage</field>
+			<field name="menu_parms"></field>
+		</item>
+
+		<item>
+			<field name="menu_id">222</field>
+			<field name="menu_name">home-team-introduction</field>
+			<field name="menu_location">4</field>
+			<field name="menu_order">1</field>
+			<field name="menu_class">0</field>
+			<field name="menu_pages"></field>
+			<field name="menu_path">36</field>
+			<field name="menu_layout">homepage</field>
+			<field name="menu_parms"></field>
+		</item>
+		<item>
+			<field name="menu_id">221</field>
+			<field name="menu_name">home-about-introduction</field>
+			<field name="menu_location">3</field>
+			<field name="menu_order">1</field>
+			<field name="menu_class">0</field>
+			<field name="menu_pages"></field>
+			<field name="menu_path">35</field>
+			<field name="menu_layout">homepage</field>
+			<field name="menu_parms"></field>
+		</item>
+		<item>
+			<field name="menu_id">228</field>
+			<field name="menu_name">home-portfolio-intro</field>
+			<field name="menu_location">2</field>
+			<field name="menu_order">1</field>
+			<field name="menu_class">0</field>
+			<field name="menu_pages"></field>
+			<field name="menu_path">41</field>
+			<field name="menu_layout">homepage</field>
+			<field name="menu_parms"></field>
+		</item>
+	</dbTable>
+	</database>
+</e107Export>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<e107Export version="2.1.4 (git)" timestamp="1484749709" >
+	<database>
+	<dbTable name="links">
+		<item>
+			<field name="link_id">12</field>
+			<field name="link_name">Privacy Policy</field>
+			<field name="link_url">page.php?id=7</field>
+			<field name="link_description"></field>
+			<field name="link_button"></field>
+			<field name="link_category">3</field>
+			<field name="link_order">11</field>
+			<field name="link_parent">0</field>
+			<field name="link_open">0</field>
+			<field name="link_class">0</field>
+			<field name="link_function"></field>
+			<field name="link_sefurl"></field>
+			<field name="link_owner"></field>
+		</item>
+		<item>
+			<field name="link_id">13</field>
+			<field name="link_name">Terms of Use</field>
+			<field name="link_url">page.php?id=8</field>
+			<field name="link_description"></field>
+			<field name="link_button"></field>
+			<field name="link_category">3</field>
+			<field name="link_order">12</field>
+			<field name="link_parent">0</field>
+			<field name="link_open">0</field>
+			<field name="link_class">0</field>
+			<field name="link_function"></field>
+			<field name="link_sefurl"></field>
+			<field name="link_owner"></field>
+		</item>
+	</dbTable>
+	</database>
+</e107Export>
