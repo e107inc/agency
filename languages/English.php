@@ -27,7 +27,7 @@ define("LAN_AG_THEME_12", "Your Message");
 define("LAN_AG_THEME_13", "Send Message");
 define("LAN_AG_THEME_14", "No Portfolio items");
 define("LAN_AG_THEME_15", "No members");
-define("LAN_AG_THEME_16", "Team Members  Add text here.......");
+define("LAN_AG_THEME_16", "in theme.php  Team Members  Add text here.......");
 define("LAN_AG_THEME_17", "templates/chapter_temlate.php  Add text here.......");
 define("LAN_AG_THEME_18", "Articles");
 ?>
