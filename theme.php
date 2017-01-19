@@ -375,7 +375,7 @@ $LAYOUT['homepage'] =  '
     <div class="container">
         <div class="row">
             {SETSTYLE=notitle}
-            {GALLERY_PORTFOLIO=gallery_image_2}             
+            {GALLERY_PORTFOLIO: category=2&limit=4}             
         </div>
     </div>
 </aside>
