@@ -29,7 +29,7 @@ $CHAPTER_TEMPLATE['default']['listBooks']['end']					= "</ul>";
 
 
 
-$CHAPTER_TEMPLATE['nav']['listChapters']['caption']					= "Articles";
+$CHAPTER_TEMPLATE['nav']['listChapters']['caption']					= LAN_AG_THEME_18;
 
 $CHAPTER_TEMPLATE['nav']['listChapters']['start'] 					= '<ul class="page-nav">';
 	
@@ -187,15 +187,15 @@ $CHAPTER_TEMPLATE['modalportfolio']['listItems']['item'] 			= '
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
                                 <h2>{CPAGETITLE}</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <p class="item-intro text-muted">'.LAN_AG_THEME_17.'</p>
                                 <img class="img-fluid img-centered" src="{CMENUIMAGE=url}" alt="">
                                 <p> {CPAGEBODY}</p>
                                     <ul class="list-inline">
-                                    <li>Date: {CPAGEDATE=short}</li>
-                                    <li>Client: {CMENUTITLE}</li>
-                                    <li>Category: {CHAPTER_NAME}</li>
+                                    <li>'.LAN_DATE.': {CPAGEDATE=short}</li>
+                                    <li>'.LAN_AG_THEME_02.': {CMENUTITLE}</li>
+                                    <li>'.LAN_CATEGORY.': {CHAPTER_NAME}</li>
                                 </ul>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> '.LAN_AG_THEME_00.'</button>
                             </div>
                         </div>
                     </div>
@@ -227,9 +227,7 @@ $CHAPTER_TEMPLATE['timeline']['listItems']['item'] 				= '
 $CHAPTER_TEMPLATE['timeline']['listItems']['end'] 					= '
     <li>
         <div class="timeline-image">
-            <h4>Be Part
-                <br>Of Our
-                <br>Story!</h4>
+            <h4>'.LAN_AG_THEME_01.'</h4>
         </div>
     </li>
 </ul>
