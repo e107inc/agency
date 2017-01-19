@@ -117,119 +117,144 @@ class theme_shortcodes extends e_shortcode
 			   </div>
 		</li>'; 
 		return $tp->parseTemplate($text,true,$login_menu_shortcodes);
-	}	
+	}
 
 
-function sc_portfolioitems()
+	function sc_portfolioitems()
 	{
-	$template = e107::getCoreTemplate('chapter', 'portfolio');
-	$sc = e107::getScBatch('page', null, 'cpage');
+		$template = e107::getCoreTemplate('chapter', 'portfolio');
+		$sc = e107::getScBatch('page', null, 'cpage');
 
-	// ONLY ONE BOOK WITH TEMPLATE PORTFOLIO
+		//return print_a($sc,true);
+		// ONLY ONE BOOK WITH TEMPLATE PORTFOLIO
 
-	$book = e107::getDb()->retrieve("SELECT chapter_id, chapter_name, chapter_meta_description FROM #page_chapters WHERE chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'portfolio'  LIMIT 1", true); 
-	$page['book_id'] = $book[0]['chapter_id'];
-	$page['book_name'] = $book[0]['chapter_name'];
-	$page['book_desc'] = $book[0]['chapter_meta_description'];
+		$book = e107::getDb()->retrieve("SELECT chapter_id, chapter_name, chapter_meta_description FROM #page_chapters WHERE chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'portfolio'  LIMIT 1", true);
+		$page['book_id'] = $book[0]['chapter_id'];
+		$page['book_name'] = $book[0]['chapter_name'];
+		$page['book_desc'] = $book[0]['chapter_meta_description'];
 
-	// $page['book_sef'] = $bookSef;
+		// $page['book_sef'] = $bookSef;
 
-	$var = array(
-		'BOOK_NAME' => e107::getParser()->toHtml($page['book_name']) ,
-		'BOOK_DESC' => e107::getParser()->toHtml($page['book_desc']) ,
-	);
-	$body = e107::getParser()->simpleParse($template['listItems']['caption'], $var);
+		$var = array(
+				'BOOK_NAME' => e107::getParser()->toHtml($page['book_name']),
+				'BOOK_DESC' => e107::getParser()->toHtml($page['book_desc']),
+		);
+		$body = e107::getParser()->simpleParse($template['listItems']['caption'], $var);
 
-	// TO GET ALL PAGES, WITH THEIR CHAPTERS WITH BOOK PORTFOLIO
+		// TO GET ALL PAGES, WITH THEIR CHAPTERS WITH BOOK PORTFOLIO
 
-	$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . $page['book_id'] . " ORDER BY p.page_order DESC ";
-	$text.= e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
-	if ($pageArray = e107::getDb()->retrieve($query, TRUE))
+		$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . intval($page['book_id']) . " ORDER BY p.page_order DESC ";
+
+		$text = e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
+
+		if($pageArray = e107::getDb()->retrieve($query, true))
 		{
-		foreach($pageArray as $page)
+			foreach($pageArray as $page)
 			{
-			$sc->setVars($page);
-			$text.= e107::getParser()->parseTemplate($template['listItems']['item'], true, $sc);
+				$sc->setVars($page);
+				$text .= e107::getParser()->parseTemplate($template['listItems']['item'], true, $sc);
 			}
 		}
-	  else $text = 'No Portfolio items';
-	$text.= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
-	return $body . $text;
-	}
-	
-	
-function sc_modalportfolio()
-	{
-	$template = e107::getCoreTemplate('chapter', 'modalportfolio');
-	$sc = e107::getScBatch('page', null, 'cpage');
-
-	// ONLY ONE BOOK WITH TEMPLATE PORTFOLIO
-
-	$book = e107::getDb()->retrieve("SELECT chapter_id, chapter_name, chapter_meta_description FROM #page_chapters WHERE chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'portfolio'  LIMIT 1", true); 
-	$page['book_id'] = $book[0]['chapter_id'];
-	$page['book_name'] = $book[0]['chapter_name'];
-	$page['book_desc'] = $book[0]['chapter_meta_description'];
-
-	// $page['book_sef'] = $bookSef;
-
-	$var = array(
-		'BOOK_NAME' => e107::getParser()->toHtml($page['book_name']) ,
-		'BOOK_DESC' => e107::getParser()->toHtml($page['book_desc']) ,
-	);
-	$body = e107::getParser()->simpleParse($template['listItems']['caption'], $var);
-
-	// TO GET ALL PAGES, WITH THEIR CHAPTERS WITH BOOK PORTFOLIO
-
-	$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . $page['book_id'] . " ORDER BY p.page_order DESC ";
-	$text.= e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
-	if ($pageArray = e107::getDb()->retrieve($query, TRUE))
+		else
 		{
-		foreach($pageArray as $page)
+			$text = 'No Portfolio items';
+		}
+
+		$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
+
+		return $body . $text;
+	}
+
+
+	function sc_modalportfolio()
+	{
+		$template = e107::getCoreTemplate('chapter', 'modalportfolio');
+		$sc = e107::getScBatch('page', null, 'cpage');
+
+	//	return print_a($sc,true);
+
+		// XXX Much of this is already loaded by getScBatch();
+
+		// ONLY ONE BOOK WITH TEMPLATE PORTFOLIO
+
+		$book = e107::getDb()->retrieve("SELECT chapter_id, chapter_name, chapter_meta_description FROM #page_chapters WHERE chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'portfolio'  LIMIT 1", true);
+		$page['book_id'] = $book[0]['chapter_id'];
+		$page['book_name'] = $book[0]['chapter_name'];
+		$page['book_desc'] = $book[0]['chapter_meta_description'];
+
+		// $page['book_sef'] = $bookSef;
+
+		$var = array(
+				'BOOK_NAME' => e107::getParser()->toHtml($page['book_name']),
+				'BOOK_DESC' => e107::getParser()->toHtml($page['book_desc']),
+		);
+		$body = e107::getParser()->simpleParse($template['listItems']['caption'], $var);
+
+		// TO GET ALL PAGES, WITH THEIR CHAPTERS WITH BOOK PORTFOLIO
+
+		$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . intval($page['book_id']) . " ORDER BY p.page_order DESC ";
+
+
+		$text = e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
+
+		if($pageArray = e107::getDb()->retrieve($query, true))
+		{
+			foreach($pageArray as $page)
 			{
-			$sc->setVars($page);
-			$text.= e107::getParser()->parseTemplate($template['listItems']['item'], true, $sc);
+				$sc->setVars($page);
+				$text .= e107::getParser()->parseTemplate($template['listItems']['item'], true, $sc);
 			}
 		}
-	  else $text = 'No Portfolio items';
-	$text.= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
-	return $body . $text;
-	}
-	
- function sc_xurl_icons()  {
-     $social = array(
-            'rss'           => array('href'=> (e107::isInstalled('rss_menu') ? e107::url('rss_menu', 'index', array('rss_url'=>'news')) : ''), 'title'=>'RSS/Atom Feed'),
-            'facebook'      => array('href'=> deftrue('XURL_FACEBOOK'),     'title'=>'Facebook'),
-            'twitter'       => array('href'=> deftrue('XURL_TWITTER'),      'title'=>'Twitter'),
-            'google-plus'   => array('href'=> deftrue('XURL_GOOGLE'),       'title'=>'Google Plus'),
-            'linkedin'      => array('href'=> deftrue('XURL_LINKEDIN'),     'title'=>'LinkedIn'),
-            'github'        => array('href'=> deftrue('XURL_GITHUB'),       'title'=>'Github'),
-            'pinterest'     => array('href'=> deftrue('XURL_PINTEREST'),    'title'=>'Pinterest'),
-            'flickr'        => array('href'=> deftrue('XURL_FLICKR'),       'title'=>'Flickr'),
-            'instagram'     => array('href'=> deftrue('XURL_INSTAGRAM'),    'title'=>'Instagram'),
-            'youtube'       => array('href'=> deftrue('XURL_YOUTUBE'),      'title'=>'YouTube'),
-            'question-circle'      => array('href'=> deftrue('XURL_VIMEO'),     'title'=>'e107 HELP')
-        );
-        
-        
+		else
+		{
+			$text = 'No Portfolio items';
+		}
 
-    $text =  '';   
-    $textstart ='<ul class="list-inline social-buttons">';
-    $textend   = '</ul>';
-    foreach($social as $id => $data)
-    {
-        if($data['href'] != '')
-        {              
-             $text .= '<li class="list-inline-item">
-             <a rel="external" href="'.$data['href'].'" class="btn-social btn-outline"><i class="fa fa-'.$id.'"></i></a>';
-             $text .= "</li>\n";
-        }
-    }   
-    if($text !='')
-    {
-        return  $textstart.$text.$textend;
-    }
-  } 
-  
+		$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
+
+		return $body . $text;
+
+
+	}
+
+
+	//@todo if this is done often, sc_xurl_icons() needs a template.
+	function sc_xurl_icons()
+	{
+		$social = array(
+				'rss'             => array('href' => (e107::isInstalled('rss_menu') ? e107::url('rss_menu', 'index', array('rss_url' => 'news')) : ''), 'title' => 'RSS/Atom Feed'),
+				'facebook'        => array('href' => deftrue('XURL_FACEBOOK'), 'title' => 'Facebook'),
+				'twitter'         => array('href' => deftrue('XURL_TWITTER'), 'title' => 'Twitter'),
+				'google-plus'     => array('href' => deftrue('XURL_GOOGLE'), 'title' => 'Google Plus'),
+				'linkedin'        => array('href' => deftrue('XURL_LINKEDIN'), 'title' => 'LinkedIn'),
+				'github'          => array('href' => deftrue('XURL_GITHUB'), 'title' => 'Github'),
+				'pinterest'       => array('href' => deftrue('XURL_PINTEREST'), 'title' => 'Pinterest'),
+				'flickr'          => array('href' => deftrue('XURL_FLICKR'), 'title' => 'Flickr'),
+				'instagram'       => array('href' => deftrue('XURL_INSTAGRAM'), 'title' => 'Instagram'),
+				'youtube'         => array('href' => deftrue('XURL_YOUTUBE'), 'title' => 'YouTube'),
+				'question-circle' => array('href' => deftrue('XURL_VIMEO'), 'title' => 'e107 HELP')
+		);
+
+
+		$text = '';
+		$textstart = '<ul class="list-inline social-buttons">';
+		$textend = '</ul>';
+		foreach($social as $id => $data)
+		{
+			if($data['href'] != '')
+			{
+				$text .= '<li class="list-inline-item">
+             <a rel="external" href="' . $data['href'] . '" class="btn-social btn-outline"><i class="fa fa-' . $id . '"></i></a>';
+				$text .= "</li>\n";
+			}
+		}
+		if($text != '')
+		{
+			return $textstart . $text . $textend;
+		}
+
+	}
+
 }
 
 ?>
