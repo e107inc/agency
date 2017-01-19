@@ -2,6 +2,8 @@
 
 if (!defined('e107_INIT')) { exit; }
 
+e107::lan('theme', 'admin',true);
+
 // Dummy Theme Configuration File.
 class theme_config implements e_theme_config
 {
@@ -28,7 +30,7 @@ class theme_config implements e_theme_config
 
 	function help()
 	{
-	 	return '';
+	 	return null;
 	}
 }
 
