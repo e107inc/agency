@@ -15,22 +15,26 @@ define('VIEWPORT', 		"width=device-width, initial-scale=1.0");
 
 e107::lan('theme');
 
-$cndPref = e107::pref('theme', 'cdn','localhost');
+$cndPref = e107::pref('theme', 'cdn','local');
 
 switch($cndPref)
 {		
-	case "localhost": //@todo  add back once correct core path is determined.
+	case "local": //@todo  add back once correct core path is determined.
 		e107::css('theme', 'vendor/bootstrap/css/bootstrap.min.css');
 		e107::css('theme', 'vendor/font-awesome/css/font-awesome.min.css');
 		e107::js('theme', 'vendor/tether/tether.min.js', 'jquery');
 		e107::js('theme', 'vendor/bootstrap/js/bootstrap.min.js', 'jquery');		
-		
-		break;     
+  break;	     
 /*	case "cdnjs":
 	default:
 		e107::css('url', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ');
 		e107::css('footer', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js');
 		e107::js('footer', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js', 'jquery');  */
+	default:
+		e107::css('theme', 'vendor/bootstrap/css/bootstrap.min.css');
+		e107::css('theme', 'vendor/font-awesome/css/font-awesome.min.css');
+		e107::js('theme', 'vendor/tether/tether.min.js', 'jquery');
+		e107::js('theme', 'vendor/bootstrap/js/bootstrap.min.js', 'jquery');
 }
 
 e107::js('url','https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js','','2','<!--[if lt IE 9]>','');
@@ -320,7 +324,7 @@ $LAYOUT['homepage'] =  '
             </div>
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-xs-center">
-                    <p class="large text-muted">This will be theme prefs text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                    <p class="large text-muted">'.e107::pref('theme', 'textafterteam','').'</p>
                 </div>
             </div>
         </div>

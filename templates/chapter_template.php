@@ -227,9 +227,7 @@ $CHAPTER_TEMPLATE['timeline']['listItems']['item'] 				= '
 $CHAPTER_TEMPLATE['timeline']['listItems']['end'] 					= '
     <li>
         <div class="timeline-image">
-            <h4>Be Part
-                <br>Of Our
-                <br>Story!</h4>
+            <h4>'.e107::pref('theme', 'timelineendtext','').'</h4>
         </div>
     </li>
 </ul>
