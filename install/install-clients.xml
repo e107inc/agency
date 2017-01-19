@@ -11,7 +11,7 @@
 			<field name="media_category">gallery_image_2</field>
 			<field name="media_datestamp">1484831108</field>
 			<field name="media_author">1</field>
-			<field name="media_url">{e_MEDIA_IMAGE}2017-01/aetuts.jpg</field>
+			<field name="media_url">{e_THEME}agency/install/logos/aetuts.jpg</field>
 			<field name="media_size">2063</field>
 			<field name="media_dimensions">200 x 50</field>
 			<field name="media_userclass">0</field>
@@ -27,7 +27,7 @@
 			<field name="media_category">gallery_image_2</field>
 			<field name="media_datestamp">1484831108</field>
 			<field name="media_author">1</field>
-			<field name="media_url">{e_MEDIA_IMAGE}2017-01/creative_market.jpg</field>
+			<field name="media_url">{e_THEME}agency/install/logos/creativemarket.jpg</field>
 			<field name="media_size">1766</field>
 			<field name="media_dimensions">200 x 50</field>
 			<field name="media_userclass">0</field>
@@ -43,7 +43,7 @@
 			<field name="media_category">gallery_image_2</field>
 			<field name="media_datestamp">1484831109</field>
 			<field name="media_author">1</field>
-			<field name="media_url">{e_MEDIA_IMAGE}2017-01/designmodo.jpg</field>
+			<field name="media_url">{e_THEME}agency/install/logos/designmodo.jpg</field>
 			<field name="media_size">1696</field>
 			<field name="media_dimensions">200 x 50</field>
 			<field name="media_userclass">0</field>
@@ -59,7 +59,7 @@
 			<field name="media_category">gallery_image_2</field>
 			<field name="media_datestamp">1484831109</field>
 			<field name="media_author">1</field>
-			<field name="media_url">{e_MEDIA_IMAGE}2017-01/envato.jpg</field>
+			<field name="media_url">{e_THEME}agency/install/logos/envato.jpg</field>
 			<field name="media_size">2040</field>
 			<field name="media_dimensions">200 x 50</field>
 			<field name="media_userclass">0</field>
@@ -75,7 +75,7 @@
 			<field name="media_category">gallery_image_2</field>
 			<field name="media_datestamp">1484831109</field>
 			<field name="media_author">1</field>
-			<field name="media_url">{e_MEDIA_IMAGE}2017-01/themeforest.jpg</field>
+			<field name="media_url">{e_THEME}agency/install/logos/themeforest.jpg</field>
 			<field name="media_size">1689</field>
 			<field name="media_dimensions">200 x 50</field>
 			<field name="media_userclass">0</field>
