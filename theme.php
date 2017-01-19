@@ -215,7 +215,7 @@ $LAYOUT['_footer_'] = '
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">{SITEDISCLAIMER}</span>
+                    <span class="copyright">{SITEDISCLAIMER=2017}</span>
                 </div>
                 <div class="col-md-4">
                    {XURL_ICONS}
@@ -320,7 +320,7 @@ $LAYOUT['homepage'] =  '
             </div>
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-xs-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                    <p class="large text-muted">'.LAN_AG_THEME_16.'</p>
                 </div>
             </div>
         </div>
@@ -341,8 +341,8 @@ $LAYOUT['homepage'] =  '
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-xs-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">'.LAN_AG_THEME_04.'</h2>
+                    <h3 class="section-subheading text-muted">'.LAN_AG_THEME_03.'</h3>
                 </div>
             </div>
             <div class="row">
@@ -351,28 +351,28 @@ $LAYOUT['homepage'] =  '
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <input type="text" class="form-control" placeholder="'.LAN_AG_THEME_08.' *" id="name" required data-validation-required-message="'.LAN_AG_THEME_09.'">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <input type="email" class="form-control" placeholder="'.LAN_AG_THEME_10.' *" id="email" required data-validation-required-message="'.LAN_AG_THEME_11.'">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <input type="tel" class="form-control" placeholder="'.LAN_AG_THEME_05.' *" id="phone" required data-validation-required-message="'.LAN_AG_THEME_06.'">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <textarea class="form-control" placeholder="'.LAN_AG_THEME_12.' *" id="message" required data-validation-required-message="'.LAN_AG_THEME_07.'"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-xs-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
+                                <button type="submit" class="btn btn-xl">'.LAN_AG_THEME_13.'</button>
                             </div>
                         </div>
                     </form>
