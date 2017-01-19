@@ -350,22 +350,22 @@ $LAYOUT['homepage'] =  '
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="'.LAN_AG_THEME_08.' *" id="name" required data-validation-required-message="'.LAN_AG_THEME_09.'">
+                                <div class="form-group"><p class="help-block text-muted">'.LAN_AG_THEME_08.' *</p>
+                                    <input type="text" class="form-control" id="name" required data-validation-required-message="'.LAN_AG_THEME_09.'">
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="'.LAN_AG_THEME_10.' *" id="email" required data-validation-required-message="'.LAN_AG_THEME_11.'">
+                                <div class="form-group"><p class="help-block text-muted">'.LAN_AG_THEME_10.' *</p>
+                                    <input type="email" class="form-control" id="email" required data-validation-required-message="'.LAN_AG_THEME_11.'">
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="'.LAN_AG_THEME_05.' *" id="phone" required data-validation-required-message="'.LAN_AG_THEME_06.'">
+                                <div class="form-group"><p class="help-block text-muted">'.LAN_AG_THEME_05.' *</p>
+                                    <input type="tel" class="form-control" id="phone" required data-validation-required-message="'.LAN_AG_THEME_06.'">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="'.LAN_AG_THEME_12.' *" id="message" required data-validation-required-message="'.LAN_AG_THEME_07.'"></textarea>
+                                <div class="form-group"><p class="help-block text-muted">'.LAN_AG_THEME_12.' *</p>
+                                    <textarea class="form-control" id="message" required data-validation-required-message="'.LAN_AG_THEME_07.'"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
