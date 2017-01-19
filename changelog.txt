@@ -8,17 +8,21 @@ Standard theme developing:
 - Moved Portfolio section title to menu as general introduction text (more flexibility)
 - Cleaned portfolio shortcode
 - Added clients section using {GALLERY_PORTFOLIO} - {SETSTYLE} is ignored with this shortcode
+- Attempt to add teammembers
 
+Comparation with bootstrap 3 theme:
+- Missing: img-fluid instead img-responsive with BT4 defined
+- Missing: img-fluid rounded-circle with BT4 defined  -  to_avatar()
 
-TODO:  put end of timeline to theme prefs
+TODO:  
+put text from end of timeline to theme prefs
+put text from end of teammembers to theme prefs
 
 ## Version 2.0.0.0 – January 18th, 2017
 Comparation with bootstrap 3 theme:
 - Rewritten {BOOTSTRAP_USERNAV}  - used a lot of variables to understand how it should work, before taken for granted
 - Rewritten navigation_template.php (main, footer)
 - Removed glyphicon support (not supported in Bootstrap 4)
-- Missing: img-fluid instead img-responsive  with BT4 defined
-- Missing: img-fluid rounded-circle with BT4 defined  -  to_avatar()
 
 Standard theme developing:
 - Implemented header + footer css and scripts
