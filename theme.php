@@ -55,7 +55,15 @@ e107::js("theme", 	'js/contact_me.js', 'jquery');
 e107::js("theme", 	'js/agency.min.js', 'jquery'); 
 
 
-/* theme plugin is needed for this */
+/* originally hardcoded in style.css NEED BE CHECKED */
+$headerbackground = e107::pref('theme', 'headerbackground', FALSE); 
+if($headerbackground) 
+{
+	$headerbackground = e107::getParser()->replaceConstants($headerbackground);
+	$inlinecss1  = 'header {   background-image: url('.$headerbackground.') }';
+	e107::css("inline", $inlinecss1);
+}
+/* override with theme prefs */
 $inlinecss = e107::pref('theme', 'inlinecss', FALSE);
 if($inlinecss) { 
 	e107::css("inline", $inlinecss);

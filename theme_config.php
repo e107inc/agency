@@ -20,6 +20,7 @@ class theme_config implements e_theme_config
 			'timelineendtext'   => array('title' => LAN_AG_THEMEPREF_01, 'type'=>'text', 'writeParms'=>array('size'=>'block-level'), 'help'=>''),
 			'textafterteam'   	=> array('title' => LAN_AG_THEMEPREF_02, 'type'=>'textarea', 'writeParms'=>array('size'=>'block-level'), 'help'=>''),
 			'teammemberclass'   => array('title' => LAN_AG_THEMEPREF_00, 'type'=>'userclass', 'help'=>''),
+			'headerbackground'  => array('title' => LAN_AG_THEMEPREF_03, 'type'=>'image', 'help'=>''),
 			'inlinecss'  				=> array('title' => LAN_THEMEPREF_01, 'type'=>'textarea', 'writeParms'=>array('size'=>'block-level'),'help'=>''),
 			'inlinejs'   				=> array('title' => LAN_THEMEPREF_02, 'type'=>'textarea', 'writeParms'=>array('size'=>'block-level'),'help'=>''),			
 			'cdn' => array('title' => 'CDN', 'type'=>'dropdown', 
