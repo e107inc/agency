@@ -16,9 +16,11 @@ class theme_config implements e_theme_config
 	{
 		// v2.1.4 format.
 
-		$fields = array(
-			 
+    $fields = array(
+			'timelineendtext'       => array('title' => LAN_AG_THEMEPREF_01, 'type'=>'text', 'help'=>''),
+			'teammemberclass'       => array('title' => LAN_AG_THEMEPREF_00, 'type'=>'userclass', 'help'=>''),
  		);
+
 
 		return $fields;
  

@@ -276,6 +276,43 @@ class theme_shortcodes extends e_shortcode
 	  global $pairing;
 		$pairing = !$pairing; return ($pairing ? '' : 'class= "timeline-inverted" ');
   }
+  
+  
+  
+  function sc_teammembers()
+	{        
+	if($userclass = e107::pref('theme', 'teammemberclass', '2')) 
+	{
+	 
+		$teammembers = e107::getDb()->retrieve('user', '*', ' WHERE FIND_IN_SET('.$userclass.',user_class) ', TRUE);
+	 
+		$TM_TEMPLATE = e107::getCoreTemplate('user', 'teammember');
+		
+		$user_shortcodes = e107::getScBatch('user');
+		 
+		$text = '';
+		
+		if($teammembers)
+		{
+		foreach ($teammembers as $teammember)
+		  {     
+			$user_shortcodes->setVars($teammember);   
+		  $TEAMMEMBER_TEXT     = e107::getParser()->parseTemplate($TM_TEMPLATE , TRUE, $user_shortcodes);
+		  $text .= $TEAMMEMBER_TEXT;  
+		  }                                                    
+		}
+		else
+		{
+		    $text = "
+		    <div class='alert alert-info alert-block text-center'>No members</div>
+		    ";
+		}  
+	 
+		return $text ; 
+	 
+		}	
+	else return '';
+	}
  
 }
 

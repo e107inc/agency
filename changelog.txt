@@ -3,13 +3,22 @@ Standard theme developing:
 - Added Services section
 - Added Theme Shortcode for insert only glyph name (f.e. fa-shopping) as menu text
 - Added general introducion text (able to use any menu at this area)
+- Added Timeline section
+- Cleaned modalportfolio shortcode
+- Moved Portfolio section title to menu as general introduction text (more flexibility)
+- Cleaned portfolio shortcode
+- Added clients section using {GALLERY_PORTFOLIO} - {SETSTYLE} is ignored with this shortcode
 
+
+TODO:  put end of timeline to theme prefs
 
 ## Version 2.0.0.0 – January 18th, 2017
 Comparation with bootstrap 3 theme:
 - Rewritten {BOOTSTRAP_USERNAV}  - used a lot of variables to understand how it should work, before taken for granted
 - Rewritten navigation_template.php (main, footer)
 - Removed glyphicon support (not supported in Bootstrap 4)
+- Missing: img-fluid instead img-responsive  with BT4 defined
+- Missing: img-fluid rounded-circle with BT4 defined  -  to_avatar()
 
 Standard theme developing:
 - Implemented header + footer css and scripts

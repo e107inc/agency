@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<e107Export version="2.1.4 (git)" timestamp="1484832370" >
+	<database>
+	<dbTable name="core_media">
+		<item>
+			<field name="media_id">88</field>
+			<field name="media_type">image/jpeg</field>
+			<field name="media_name">aetuts</field>
+			<field name="media_caption">aetuts</field>
+			<field name="media_description"></field>
+			<field name="media_category">gallery_image_2</field>
+			<field name="media_datestamp">1484831108</field>
+			<field name="media_author">1</field>
+			<field name="media_url">{e_MEDIA_IMAGE}2017-01/aetuts.jpg</field>
+			<field name="media_size">2063</field>
+			<field name="media_dimensions">200 x 50</field>
+			<field name="media_userclass">0</field>
+			<field name="media_usedby"></field>
+			<field name="media_tags"></field>
+		</item>
+		<item>
+			<field name="media_id">89</field>
+			<field name="media_type">image/jpeg</field>
+			<field name="media_name">creative_market</field>
+			<field name="media_caption">creative market</field>
+			<field name="media_description"></field>
+			<field name="media_category">gallery_image_2</field>
+			<field name="media_datestamp">1484831108</field>
+			<field name="media_author">1</field>
+			<field name="media_url">{e_MEDIA_IMAGE}2017-01/creative_market.jpg</field>
+			<field name="media_size">1766</field>
+			<field name="media_dimensions">200 x 50</field>
+			<field name="media_userclass">0</field>
+			<field name="media_usedby"></field>
+			<field name="media_tags"></field>
+		</item>
+		<item>
+			<field name="media_id">90</field>
+			<field name="media_type">image/jpeg</field>
+			<field name="media_name">designmodo</field>
+			<field name="media_caption">designmodo</field>
+			<field name="media_description"></field>
+			<field name="media_category">gallery_image_2</field>
+			<field name="media_datestamp">1484831109</field>
+			<field name="media_author">1</field>
+			<field name="media_url">{e_MEDIA_IMAGE}2017-01/designmodo.jpg</field>
+			<field name="media_size">1696</field>
+			<field name="media_dimensions">200 x 50</field>
+			<field name="media_userclass">0</field>
+			<field name="media_usedby"></field>
+			<field name="media_tags"></field>
+		</item>
+		<item>
+			<field name="media_id">91</field>
+			<field name="media_type">image/jpeg</field>
+			<field name="media_name">envato</field>
+			<field name="media_caption">envato</field>
+			<field name="media_description"></field>
+			<field name="media_category">gallery_image_2</field>
+			<field name="media_datestamp">1484831109</field>
+			<field name="media_author">1</field>
+			<field name="media_url">{e_MEDIA_IMAGE}2017-01/envato.jpg</field>
+			<field name="media_size">2040</field>
+			<field name="media_dimensions">200 x 50</field>
+			<field name="media_userclass">0</field>
+			<field name="media_usedby"></field>
+			<field name="media_tags"></field>
+		</item>
+		<item>
+			<field name="media_id">93</field>
+			<field name="media_type">image/jpeg</field>
+			<field name="media_name">themeforest</field>
+			<field name="media_caption">themeforest</field>
+			<field name="media_description"></field>
+			<field name="media_category">gallery_image_2</field>
+			<field name="media_datestamp">1484831109</field>
+			<field name="media_author">1</field>
+			<field name="media_url">{e_MEDIA_IMAGE}2017-01/themeforest.jpg</field>
+			<field name="media_size">1689</field>
+			<field name="media_dimensions">200 x 50</field>
+			<field name="media_userclass">0</field>
+			<field name="media_usedby"></field>
+			<field name="media_tags"></field>
+		</item>
+	</dbTable>
+	<dbTable name="core_media_cat">
+		<item>
+			<field name="media_cat_id">15</field>
+			<field name="media_cat_owner">gallery</field>
+			<field name="media_cat_category">gallery_image_2</field>
+			<field name="media_cat_title">clients</field>
+			<field name="media_cat_sef">clients</field>
+			<field name="media_cat_diz"></field>
+			<field name="media_cat_class">0</field>
+			<field name="media_cat_image"></field>
+			<field name="media_cat_order">0</field>
+		</item>
+	</dbTable>
+	</database>
+</e107Export>

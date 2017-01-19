@@ -316,51 +316,7 @@ $LAYOUT['homepage'] =  '
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="'.$imagepath.'team/1.jpg" class="img-fluid rounded-circle" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="'.$imagepath.'team/2.jpg" class="img-fluid rounded-circle" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="'.$imagepath.'team/3.jpg" class="img-fluid rounded-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                {TEAMMEMBERS}
             </div>
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-xs-center">
