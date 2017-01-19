@@ -314,6 +314,18 @@ class theme_shortcodes extends e_shortcode
 	else return '';
 	}
  
+  function sc_sitedisclaimer($copyYear = NULL)
+	{
+		$default = "Proudly powered by <a href='http://e107.org'>e107</a> which is released under the terms of the GNU GPL License.";
+		$sitedisclaimer = deftrue('SITEDISCLAIMER',$default);
+ 
+    $copyYear = vartrue($copyYear,'2013');
+	  $curYear = date('Y'); 
+	  $text = '&copy; '. $copyYear . (($copyYear != $curYear) ? ' - ' . $curYear : '');
+ 
+	  $text .= ' '.$sitedisclaimer;        
+		return e107::getParser()->toHtml($text, true, 'SUMMARY');	
+	}
 }
 
 ?>

@@ -215,7 +215,7 @@ $LAYOUT['_footer_'] = '
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">{SITEDISCLAIMER}</span>
+                    <span class="copyright">{SITEDISCLAIMER=2017}</span>
                 </div>
                 <div class="col-md-4">
                    {XURL_ICONS}
