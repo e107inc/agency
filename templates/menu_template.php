@@ -44,11 +44,11 @@
 													       '; 
 	$MENU_TEMPLATE['2-column_2:1_text-left']['end'] 	= '';  
  
-	$MENU_TEMPLATE['home-services-introduction']['start'] 			= '<div class="col-lg-12 text-xs-center">'; 
-	$MENU_TEMPLATE['home-services-introduction']['body'] 				= 
+	$MENU_TEMPLATE['home-introduction-text']['start'] 			= ''; 
+	$MENU_TEMPLATE['home-introduction-text']['body'] 				= 
 									'<h2 class="section-heading">{CMENUTITLE}</h2>
-									<h3 class="section-subheading text-muted">{CMENUBODY}</h3>';
-	$MENU_TEMPLATE['home-services-introduction']['end'] 				= '</div>';
+								   <h3 class="section-subheading text-muted">{CMENUBODY}</h3>';
+	$MENU_TEMPLATE['home-introduction-text']['end'] 				= '';
 
             
 

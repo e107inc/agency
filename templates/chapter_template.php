@@ -147,19 +147,10 @@ $CHAPTER_TEMPLATE['portfolio']['listPages']['end'] 					= "
 </div>";
  
 
-$CHAPTER_TEMPLATE['portfolio']['listItems']['caption']		= '
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-xs-center">
-                    <h2 class="section-heading">{BOOK_NAME}</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>            
-';
+$CHAPTER_TEMPLATE['portfolio']['listItems']['caption']		= '';
  
 $CHAPTER_TEMPLATE['portfolio']['listItems']['start'] 				= '{SETIMAGE: w=750&h=530&crop=1}     
-<div class="row">' ;
+' ;
 $CHAPTER_TEMPLATE['portfolio']['listItems']['item'] 				= '
                 <div class="col-md-4 col-sm-6 portfolio-item {CHAPTERSEF}">
                     <a href="#portfolio-{CPAGEID}" class="portfolio-link" data-toggle="modal">
@@ -174,21 +165,12 @@ $CHAPTER_TEMPLATE['portfolio']['listItems']['item'] 				= '
                         <h4>{CMENUTITLE}</h4>
                         <p class="text-muted">{CHAPTER_NAME}</p>
                     </div>
-                </div>';
- 
-$CHAPTER_TEMPLATE['portfolio']['listItems']['end'] 					= "
-            </div>
-        </div>
-    </section>
-";	
+                </div>'; 
+$CHAPTER_TEMPLATE['portfolio']['listItems']['end'] 					= '';	
 
-$CHAPTER_TEMPLATE['modalportfolio']['listItems']['caption']		= '
-           
-';
- 
-$CHAPTER_TEMPLATE['modalportfolio']['listItems']['start'] 				= '    
-' ;
-$CHAPTER_TEMPLATE['modalportfolio']['listItems']['item'] 				= '
+$CHAPTER_TEMPLATE['modalportfolio']['listItems']['caption']		= ''; 
+$CHAPTER_TEMPLATE['modalportfolio']['listItems']['start'] 		= '' ;
+$CHAPTER_TEMPLATE['modalportfolio']['listItems']['item'] 			= '
 {SETIMAGE: w=750&h=530&crop=1} 
     <div class="portfolio-modal modal fade" id="portfolio-{CPAGEID}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
@@ -222,8 +204,34 @@ $CHAPTER_TEMPLATE['modalportfolio']['listItems']['item'] 				= '
         </div>
     </div>';
  
-$CHAPTER_TEMPLATE['modalportfolio']['listItems']['end'] 					= "
-  
-";
+$CHAPTER_TEMPLATE['modalportfolio']['listItems']['end'] 					= '';
 
+
+$CHAPTER_TEMPLATE['timeline']['listItems']['start'] 				= '<ul class="timeline">{SETIMAGE: w=200&h=200&crop=1}' ;
+$CHAPTER_TEMPLATE['timeline']['listItems']['item'] 				= '
+<li {TIMELINE_INVERTED}>
+    <div class="timeline-image">
+        <img class="rounded-circle img-fluid" src="{CMENUIMAGE=url}" alt="">
+    </div>
+    <div class="timeline-panel">
+        <div class="timeline-heading">
+            <h4>{CHAPTER_NAME}</h4>
+            <h4 class="subheading">{CPAGETITLE}</h4>
+        </div>
+        <div class="timeline-body">
+            <p class="text-muted">{CPAGEBODY}</p>
+        </div>
+    </div>
+</li>';
+ 
+$CHAPTER_TEMPLATE['timeline']['listItems']['end'] 					= '
+    <li>
+        <div class="timeline-image">
+            <h4>Be Part
+                <br>Of Our
+                <br>Story!</h4>
+        </div>
+    </li>
+</ul>
+';
 ?>

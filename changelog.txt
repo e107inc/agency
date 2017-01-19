@@ -2,6 +2,7 @@
 Standard theme developing:
 - Added Services section
 - Added Theme Shortcode for insert only glyph name (f.e. fa-shopping) as menu text
+- Added general introducion text (able to use any menu at this area)
 
 
 ## Version 2.0.0.0 – January 18th, 2017

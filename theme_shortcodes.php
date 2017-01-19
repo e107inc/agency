@@ -125,25 +125,14 @@ class theme_shortcodes extends e_shortcode
 		$template = e107::getCoreTemplate('chapter', 'portfolio');
 		$sc = e107::getScBatch('page', null, 'cpage');
 
-		//return print_a($sc,true);
-		// ONLY ONE BOOK WITH TEMPLATE PORTFOLIO
 
-		$book = e107::getDb()->retrieve("SELECT chapter_id, chapter_name, chapter_meta_description FROM #page_chapters WHERE chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'portfolio'  LIMIT 1", true);
-		$page['book_id'] = $book[0]['chapter_id'];
-		$page['book_name'] = $book[0]['chapter_name'];
-		$page['book_desc'] = $book[0]['chapter_meta_description'];
-
-		// $page['book_sef'] = $bookSef;
-
-		$var = array(
-				'BOOK_NAME' => e107::getParser()->toHtml($page['book_name']),
-				'BOOK_DESC' => e107::getParser()->toHtml($page['book_desc']),
-		);
-		$body = e107::getParser()->simpleParse($template['listItems']['caption'], $var);
+    // TO GET ID OF BOOK WITH PORTFOLIO
+		$where  = "chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'portfolio'";
+		$book_id = e107::getDb()->retrieve('page_chapters', 'chapter_id',  $where);
 
 		// TO GET ALL PAGES, WITH THEIR CHAPTERS WITH BOOK PORTFOLIO
 
-		$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . intval($page['book_id']) . " ORDER BY p.page_order DESC ";
+		$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . intval($book_id) . " ORDER BY p.page_order DESC ";
 
 		$text = e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
 
@@ -171,29 +160,12 @@ class theme_shortcodes extends e_shortcode
 		$template = e107::getCoreTemplate('chapter', 'modalportfolio');
 		$sc = e107::getScBatch('page', null, 'cpage');
 
-	//	return print_a($sc,true);
-
-		// XXX Much of this is already loaded by getScBatch();
-
-		// ONLY ONE BOOK WITH TEMPLATE PORTFOLIO
-
-		$book = e107::getDb()->retrieve("SELECT chapter_id, chapter_name, chapter_meta_description FROM #page_chapters WHERE chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'portfolio'  LIMIT 1", true);
-		$page['book_id'] = $book[0]['chapter_id'];
-		$page['book_name'] = $book[0]['chapter_name'];
-		$page['book_desc'] = $book[0]['chapter_meta_description'];
-
-		// $page['book_sef'] = $bookSef;
-
-		$var = array(
-				'BOOK_NAME' => e107::getParser()->toHtml($page['book_name']),
-				'BOOK_DESC' => e107::getParser()->toHtml($page['book_desc']),
-		);
-		$body = e107::getParser()->simpleParse($template['listItems']['caption'], $var);
+    // TO GET ID OF BOOK WITH PORTFOLIO
+		$where  = "chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'portfolio'";
+		$book_id = e107::getDb()->retrieve('page_chapters', 'chapter_id',  $where);
 
 		// TO GET ALL PAGES, WITH THEIR CHAPTERS WITH BOOK PORTFOLIO
-
-		$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . intval($page['book_id']) . " ORDER BY p.page_order DESC ";
-
+		$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . intval($book_id) . " ORDER BY p.page_order DESC ";
 
 		$text = e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
 
@@ -219,6 +191,11 @@ class theme_shortcodes extends e_shortcode
 
 
 	//@todo if this is done often, sc_xurl_icons() needs a template.
+	/* what is rewritten with this: 
+	- set of use google or google-plus as key
+	- set textstart and textend
+	- body with $data values (key, url a title)
+	*/
 	function sc_xurl_icons()
 	{
 		$social = array(
@@ -262,6 +239,43 @@ class theme_shortcodes extends e_shortcode
     $data = $sc->getVars();
     return vartrue($data['menu_button_text'],'');
    }
+ 
+	function sc_timelineitems()
+	{
+		$template = e107::getCoreTemplate('chapter', 'timeline');
+	  $sc = e107::getScBatch('page', null, 'cpage');
+ 
+    // TO GET ID OF BOOK WITH TIMELINE
+		$where  = "chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'timeline'";
+		$book_id = e107::getDb()->retrieve('page_chapters', 'chapter_id',  $where);
+
+    // TO GET ALL PAGES, WITH THEIR CHAPTERS WITH BOOK TIMELINE
+		$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . intval($book_id) . " ORDER BY p.page_order DESC ";
+
+		$text = e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
+
+		if($pageArray = e107::getDb()->retrieve($query, true))
+		{
+			foreach($pageArray as $page)
+			{
+				$sc->setVars($page);
+				$text .= e107::getParser()->parseTemplate($template['listItems']['item'], true, $sc);
+			}
+		}
+		else
+		{
+			$text = '';
+		}
+
+		$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
+
+		return $body . $text;
+	} 
+	
+	function sc_timeline_inverted() {
+	  global $pairing;
+		$pairing = !$pairing; return ($pairing ? '' : 'class= "timeline-inverted" ');
+  }
  
 }
 
