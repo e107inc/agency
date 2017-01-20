@@ -16,7 +16,7 @@ $(function() {
             var email = $("input#contactEmail").val();
             var phone = $("input#contactPhone").val();
             var message = $("textarea#contactBody").val();
-            var send-contactus = $("input#send-contactus").val();           
+            var sendcontactus = $("input#send-contactus").val();           
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -30,7 +30,7 @@ $(function() {
                     phone: phone,
                     email: email,
                     message: message,
-                    send-contactus: send-contactus
+                    send-contactus: sendcontactus
                 },
                 cache: false,
                 success: function() {
