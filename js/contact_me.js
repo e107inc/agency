@@ -9,18 +9,21 @@ $(function() {
         },
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
+            $("#btnSubmit").attr("disabled", true);
+            event.preventDefault();
+            
             // get values from FORM
-            var name = $("input#name").val();
-            var email = $("input#email").val();
-            var phone = $("input#phone").val();
-            var message = $("textarea#message").val();
+            var name = $("input#contactName").val();
+            var email = $("input#contactEmail").val();
+            var phone = $("input#contactPhone").val();
+            var message = $("textarea#contactBody").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "e107_themes/agency/mail/contact.php",
                 type: "POST",
                 data: {
                     name: name,

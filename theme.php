@@ -171,9 +171,15 @@ function tablestyle($caption, $text, $id='', $info=array())
 		return;
 	}
 
-	if($style == 'notitle')
+	if($style == 'notags')
 	{
 	  echo str_replace(array("<p>","</p>"), "", $text);
+		return;
+	}
+	
+	if($style == 'notitle')
+	{
+	  echo $text;
 		return;
 	}
 

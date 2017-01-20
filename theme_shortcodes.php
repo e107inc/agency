@@ -280,7 +280,8 @@ class theme_shortcodes extends e_shortcode
   
   
   function sc_teammembers()
-	{        
+	{  
+	return;      
 	if($userclass = e107::pref('theme', 'teammemberclass', '2')) 
 	{
 	 
@@ -326,46 +327,17 @@ class theme_shortcodes extends e_shortcode
 	  $text .= ' '.$sitedisclaimer;        
 		return e107::getParser()->toHtml($text, true, 'SUMMARY');	
 	}
-	
-	/* reason for custom shortcode: to add own ID to form and novalidate to form tag */
-	/* this way jqBootstrapValidation.js works out of box and contact menu can be used for sidebar menu */ 
-	function sc_agency_contactform($parm='')
+ 
+ 	function sc_agency_contactform($parm='')
 	{
 			e107::lan('core','contact');
 			$head = '<form name="sentMessage"  id="contactForm" novalidate>'; 
-		  //$template = e107::getCoreTemplate('contact','menu');
-			//$contact_shortcodes = e107::getScBatch('contact');                
-			$text = '
-			<div class="row">
-		      <div class="col-md-6">
-		          <div class="form-group">              
-		              <input type="text" class="form-control"    placeholder="'.LAN_AG_THEME_08.' *" id="contactName"  name="author_name" required data-validation-required-message="'.LAN_AG_THEME_09.'">
-		              <p class="help-block text-danger"></p>
-		          </div>
-		          <div class="form-group">
-		              <input type="email" class="form-control" placeholder="'.LAN_AG_THEME_10.' *" id="contactEmail"  name="email_send" required data-validation-required-message="'.LAN_AG_THEME_06.'">
-		              <p class="help-block text-danger"></p>
-		          </div>
-		          <div class="form-group">
-		              <input type="tel" class="form-control" placeholder="'.LAN_AG_THEME_05.' *" id="phone"  name="phone" required data-validation-required-message="'.LAN_AG_THEME_11.'">
-		              <p class="help-block text-danger"></p>
-		          </div>
-		      </div>
-		      <div class="col-md-6">
-		          <div class="form-group">
-		              <textarea class="form-control" placeholder="'.LAN_AG_THEME_12.' *" id="contactBody"  name="body" required data-validation-required-message="'.LAN_AG_THEME_07.'"></textarea>
-		              <p class="help-block text-danger"></p>
-		          </div>
-		      </div>
-		      <div class="clearfix"></div>
-		      <div class="col-lg-12 text-xs-center">
-		          <div id="success"></div>
-		          <button type="submit" class="btn btn-xl">'.LAN_AG_THEME_13.'</button>
-		      </div>
-		  </div>';
-      $foot = '</form>';     
-      return e107::getRender()->tablerender(LANCONTACT_00, $head.$text.$foot, 'contact-menu');
- 	}
+		  $template = e107::getCoreTemplate('contact','homepage');
+			$contact_shortcodes = e107::getScBatch('contact');   
+			$foot = '</form>';             
+			$text = e107::getParser()->parseTemplate($head. $template . $foot, true, $contact_shortcodes);   
+      return e107::getRender()->tablerender(LANCONTACT_00, $text, 'contact-menu');
+  }
 }
 
 ?>
