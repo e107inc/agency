@@ -281,7 +281,7 @@ class theme_shortcodes extends e_shortcode
   
   function sc_teammembers()
 	{  
-	return;      
+  // return "";     
 	if($userclass = e107::pref('theme', 'teammemberclass', '2')) 
 	{
 	 
