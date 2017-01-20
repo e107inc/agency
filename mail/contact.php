@@ -7,53 +7,14 @@
  * GNU General Public License (http://www.gnu.org/licenses/gpl.txt)
  *
  * /contact.php
- *
+ * Modified just to send email after ajax calling
 */
 
-require_once("class2.php");
-//define('e_HANDLER', "e107_handlers/");
-// security image may be disabled by removing the appropriate shortcodes from the template.
-$active = varset($pref['contact_visibility'], e_UC_PUBLIC);
-$contactInfo = trim(SITECONTACTINFO);
-
-if(!check_class($active) && empty($contactInfo))
-{
-	e107::getRedirect()->go(e_HTTP."index.php");
-}
-
-require_once(e_HANDLER."secure_img_handler.php");
-$sec_img = new secure_image;
+require_once("../../../class2.php");
 
 include_lan(e_LANGUAGEDIR.e_LANGUAGE.'/lan_'.e_PAGE);
 
-define('PAGE_NAME', LANCONTACT_00);
-
-require_once(HEADERF);
-
-$tp = e107::getParser();
-$ns = e107::getRender();
-
-if (!vartrue($CONTACT_FORM))
- {
-	if (file_exists(THEME."contact_template.php")) 
-	{
-		require_once(THEME."contact_template.php");
-	}
-	else
-	{		
-		// Redirect Page if no contact-form or contact-info is available. 
-		if(($pref['sitecontacts']== e_UC_NOBODY) && trim(SITECONTACTINFO) == "")
-		{
-			e107::getRedirect()->redirect(e_BASE."index.php");
-			exit;
-		}
-		
-		$CONTACT_FORM = e107::getCoreTemplate('contact','form'); // require_once(e_THEME."templates/contact_template.php");
-	}
-}
-
-if(isset($_POST['send-contactus']))
-{
+ 
 	$error          = "";
 	$ignore         = false;
 
@@ -80,59 +41,6 @@ if(isset($_POST['send-contactus']))
 		}
 	}
 
-	// ---------
-
-	$sender_name    = $tp->toEmail($_POST['author_name'], true,'RAWTEXT');
-	$sender         = check_email($_POST['email_send']);
-	$subject        = $tp->toEmail($_POST['subject'], true,'RAWTEXT');
-	$body           = nl2br($tp->toEmail($_POST['body'], true,'RAWTEXT'));
-
-	$email_copy     = !empty($_POST['email_copy']) ? 1 : 0;
-	
-// Check Image-Code
-    if (isset($_POST['rand_num']) && !$sec_img->verify_code($_POST['rand_num'], $_POST['code_verify']))
-	{
-		$error .= LANCONTACT_15."\\n";
-	}
-
-// Check message body.
-	if(strlen(trim($body)) < 15)
-	{
-		$error .= LANCONTACT_12."\\n";
-    }
-
-// Check subject line.
-	if(isset($_POST['subject']) && strlen(trim($subject)) < 2)
-	{
-		$error .= LANCONTACT_13."\\n";
-    }
-
-	if(!strpos(trim($sender),"@"))
-	{
-		$error .= LANCONTACT_11."\\n";
-    }
-
-
-
-// Check email address on remote server (if enabled). XXX Problematic!
-	/*
-	if ($pref['signup_remote_emailcheck'] && $error == '')
-	{
-		require_once(e_HANDLER."mail_validation_class.php");
-		list($adminuser,$adminhost) = explode('@', SITEADMINEMAIL, 2);
-		$validator = new email_validation_class;
-		$validator->localuser= $adminuser;
-		$validator->localhost= $adminhost;
-		$validator->timeout=3;
-		//	$validator->debug=1;
-		//	$validator->html_debug=1;
-		if($validator->ValidateEmailBox($sender) != 1)
-		{
-			$error .= LANCONTACT_11."\\n";
-		}
-
-	}
-	*/
 
 	// No errors - so proceed to email the admin and the user (if selected).
 	if($ignore === true)
@@ -232,65 +140,8 @@ if(isset($_POST['send-contactus']))
 	    );
 
 
-
 	    $message = e107::getEmail()->sendEmail($send_to, $send_to_name, $eml, false)  ? LANCONTACT_09 : LANCONTACT_10;
-
-	    //	$message =  (sendemail($send_to,"[".SITENAME."] ".$subject, $body,$send_to_name,$sender,$sender_name)) ? LANCONTACT_09 : LANCONTACT_10;
-
-	    if(isset($pref['contact_emailcopy']) && $pref['contact_emailcopy'] && $email_copy == 1)
-	    {
-		    require_once(e_HANDLER."mail.php");
-			sendemail($sender,"[".SITENAME."] ".$subject, $body,ADMIN,$sender,$sender_name);
-	    }
-
-
-    	$ns->tablerender('', "<div class='alert alert-success'>".$message."</div>");
-		require_once(FOOTERF);
-		exit;
-    }
-    else
-	{
-		message_handler("P_ALERT", $error);
-	}
-
+ 
 }
-
-if(SITECONTACTINFO)
-{
-	if(!isset($CONTACT_INFO))
-	{
-		$CONTACT_INFO = e107::getCoreTemplate('contact','info'); 
-	}
-	
-	$text = $tp->parseTemplate($CONTACT_INFO, true, vartrue($contact_shortcodes));
-	$ns -> tablerender(LANCONTACT_01, $text,"contact");
-}
-
-
-if(check_class($active) && isset($pref['sitecontacts']) && $pref['sitecontacts'] != e_UC_NOBODY)
-{
-	$contact_shortcodes = e107::getScBatch('contact');
-	// Wrapper support
-	$contact_shortcodes->wrapper('contact/form');
-	
-	$text = $tp->parseTemplate($CONTACT_FORM, true, $contact_shortcodes);
-
-	if(trim($text) != "")
-	{
-		$ns -> tablerender(LANCONTACT_02, $text, "contact");
-	}
-}
-elseif($active == e_UC_MEMBER && ($pref['sitecontacts'] != e_UC_NOBODY))
-{
-	$srch = array("[","]");
-	$repl = array("<a class='alert-link' href='".e_SIGNUP."'>","</a>");
-	$message = LANCONTACT_16; // "You must be [registered] and signed-in to use this form.";
-
-	$ns -> tablerender(LANCONTACT_02, "<div class='alert alert-info'>".str_replace($srch, $repl, $message)."</div>", "contact");
-}
-
-
-
-require_once(FOOTERF);
-exit;
+echo json_encode($message);
 ?>

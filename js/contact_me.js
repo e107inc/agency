@@ -8,8 +8,7 @@ $(function() {
             // additional error messages or events
         },
         submitSuccess: function($form, event) {
-            event.preventDefault(); // prevent default submit behaviour
-            $("#btnSubmit").attr("disabled", true);
+
             event.preventDefault();
             
             // get values from FORM
@@ -17,6 +16,7 @@ $(function() {
             var email = $("input#contactEmail").val();
             var phone = $("input#contactPhone").val();
             var message = $("textarea#contactBody").val();
+            var send-contactus = $("input#send-contactus").val();           
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -29,7 +29,8 @@ $(function() {
                     name: name,
                     phone: phone,
                     email: email,
-                    message: message
+                    message: message,
+                    send-contactus: send-contactus
                 },
                 cache: false,
                 success: function() {
