@@ -124,33 +124,8 @@ $CHAPTER_TEMPLATE['panel']['listPages']['item'] 				= "<div class='section'><div
 $CHAPTER_TEMPLATE['panel']['listPages']['end'] 					= "</div>";	
 
 
-
-$CHAPTER_TEMPLATE['portfolio']['listPages']['caption']		= "<h3>{BOOK_NAME}</h3>";
-$CHAPTER_TEMPLATE['portfolio']['listPages']['start'] 				= '{SETIMAGE: w=750&h=530&crop=1}     
- <div class="portfolio-centered">
-            <div class="recentitems portfolio">' ;
-$CHAPTER_TEMPLATE['portfolio']['listPages']['item'] 				= 
-'<div class="portfolio-item {CHAPTERSEF}">  
-	<div class="he-wrap tpl6">
-		{CMENUIMAGE}
-		<div class="he-view">
-			<div class="bg a0" data-animate="fadeIn">
-				<h3 class="a1" data-animate="fadeInDown">{CPAGETITLE}</h3>
-				<a data-rel="prettyPhoto" href="{CMENUIMAGE=url}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-				<a href="{CPAGELINK=href}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-			</div><!-- he bg -->
-		</div><!-- he view -->		
-	</div><!-- he wrap -->
-</div><!-- end col-12 -->';
-$CHAPTER_TEMPLATE['portfolio']['listPages']['end'] 					= "
-	</div>
-</div>";
- 
-
-$CHAPTER_TEMPLATE['portfolio']['listItems']['caption']		= '';
- 
-$CHAPTER_TEMPLATE['portfolio']['listItems']['start'] 				= '{SETIMAGE: w=750&h=530&crop=1}     
-' ;
+$CHAPTER_TEMPLATE['portfolio']['listItems']['caption']		= ''; 
+$CHAPTER_TEMPLATE['portfolio']['listItems']['start'] 				= '{SETIMAGE: w=400&h=289&crop=1}' ;
 $CHAPTER_TEMPLATE['portfolio']['listItems']['item'] 				= '
                 <div class="col-md-4 col-sm-6 portfolio-item {CHAPTERSEF}">
                     <a href="#portfolio-{CPAGEID}" class="portfolio-link" data-toggle="modal">
@@ -159,7 +134,7 @@ $CHAPTER_TEMPLATE['portfolio']['listItems']['item'] 				= '
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{CMENUIMAGE=url}" class="img-fluid" alt="">
+                        <img src="{CMENUIMAGE=url}" class="img-responsive" alt="{CMENUTITLE}">
                     </a>
                     <div class="portfolio-caption">
                         <h4>{CMENUTITLE}</h4>
@@ -169,9 +144,8 @@ $CHAPTER_TEMPLATE['portfolio']['listItems']['item'] 				= '
 $CHAPTER_TEMPLATE['portfolio']['listItems']['end'] 					= '';	
 
 $CHAPTER_TEMPLATE['modalportfolio']['listItems']['caption']		= ''; 
-$CHAPTER_TEMPLATE['modalportfolio']['listItems']['start'] 		= '' ;
-$CHAPTER_TEMPLATE['modalportfolio']['listItems']['item'] 			= '
-{SETIMAGE: w=750&h=530&crop=1} 
+$CHAPTER_TEMPLATE['modalportfolio']['listItems']['start'] 		= '{SETIMAGE: w=600&h=600}' ;
+$CHAPTER_TEMPLATE['modalportfolio']['listItems']['item'] 			= ' 
     <div class="portfolio-modal modal fade" id="portfolio-{CPAGEID}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -183,17 +157,17 @@ $CHAPTER_TEMPLATE['modalportfolio']['listItems']['item'] 			= '
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8 offset-lg-2">
+                        <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
                                 <h2>{CPAGETITLE}</h2>
                                 <p class="item-intro text-muted">This has to be text related to page not LAN Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid img-centered" src="{CMENUIMAGE=url}" alt="">
+                                <img class="img-responsive img-centered" src="{CMENUIMAGE=url}" alt="{CMENUTITLE}">                               
                                 <p> {CPAGEBODY}</p>
                                     <ul class="list-inline">
-                                    <li>Date: {CPAGEDATE=short}</li>
-                                    <li>Client: {CMENUTITLE}</li>
-                                    <li>Category: {CHAPTER_NAME}</li>
+                                    <li>'.LAN_AG_THEME_01.': {CPAGEDATE=short}</li>
+                                    <li>'.LAN_AG_THEME_02.': {CMENUTITLE}</li>
+                                    <li>'.LAN_AG_THEME_17.': {CHAPTER_NAME}</li>
                                 </ul>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>'.LAN_AG_THEME_00.'</button>
                             </div>
@@ -211,7 +185,7 @@ $CHAPTER_TEMPLATE['timeline']['listItems']['start'] 				= '<ul class="timeline">
 $CHAPTER_TEMPLATE['timeline']['listItems']['item'] 				= '
 <li {TIMELINE_INVERTED}>
     <div class="timeline-image">
-        <img class="rounded-circle img-fluid" src="{CMENUIMAGE=url}" alt="">
+        <img class="img-circle img-responsive" src="{CMENUIMAGE=url}" alt="">
     </div>
     <div class="timeline-panel">
         <div class="timeline-heading">
@@ -222,8 +196,7 @@ $CHAPTER_TEMPLATE['timeline']['listItems']['item'] 				= '
             <p class="text-muted">{CPAGEBODY}</p>
         </div>
     </div>
-</li>';
- 
+</li>'; 
 $CHAPTER_TEMPLATE['timeline']['listItems']['end'] 					= '
     <li>
         <div class="timeline-image">
@@ -232,4 +205,23 @@ $CHAPTER_TEMPLATE['timeline']['listItems']['end'] 					= '
     </li>
 </ul>
 ';
+
+$CHAPTER_TEMPLATE['teammember']['listItems']['start'] 				= '' ;
+$CHAPTER_TEMPLATE['teammember']['listItems']['item'] 				= '
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="{CMENUIMAGE=url}" class="img-responsive img-circle" alt="">
+                        <h4>{CPAGETITLE}</h4>
+                        <p class="text-muted">{CMENUTITLE}</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="{CPAGEFIELD: name=twitter}"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="{CPAGEFIELD: name=facebook}"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="{CPAGEFIELD: name=linkedin}"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>'; 
+$CHAPTER_TEMPLATE['teammember']['listItems']['end'] 					= '';
 ?>

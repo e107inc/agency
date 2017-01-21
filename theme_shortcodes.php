@@ -13,11 +13,21 @@
 
 class theme_shortcodes extends e_shortcode
 {
+ 
+	
 	function __construct()
 	{
 		
 	}
 
+
+	/**
+	 * Return raw HTML-usable values from page fields.
+	 * @experimental subject to change without notice.
+	 * @param null $parm
+	 * @return mixed
+	 */
+ 
  
 	function sc_bootstrap_usernav($parm='')
 	{
@@ -35,7 +45,7 @@ class theme_shortcodes extends e_shortcode
 			
 			if($userReg==1)
 			{
-				$signuplink .= '<li class="nav-item"><a class="nav-link" href="'.e_SIGNUP.'">'.LAN_LOGINMENU_3.'</a></li>';
+				$signuplink .= '<li><a class="nav-link" href="'.e_SIGNUP.'">'.LAN_LOGINMENU_3.'</a></li>';
 			}
 
 			$socialActive = e107::pref('core', 'social_login_active');
@@ -43,7 +53,7 @@ class theme_shortcodes extends e_shortcode
 			if(!empty($userReg) || !empty($socialActive)) // e107 or social login is active.
 			{
 				$loginlink   =  '
-			  	<a class="nav-link dropdown-toggle" href="#" id="dropdownLoginLink" data-toggle="dropdown" aria-haspopup="true" 
+			  	<a class="dropdown-toggle" href="#" id="dropdownLoginLink" data-toggle="dropdown" aria-haspopup="true" 
 					   aria-expanded="true" title="'.LAN_LOGINMENU_51.'"> '.LAN_LOGINMENU_51.'</a>';
         $sociallogin =  '{SOCIAL_LOGIN: size=2x&label=1}';
 			}
@@ -85,7 +95,8 @@ class theme_shortcodes extends e_shortcode
 			
 		   	$text = ' '.
 		   	$signuplink.
-				'<li class="nav-item dropdown show">
+				'<li class="divider-vertical"></li>
+					<li class="dropdown">
 				     '.$loginlink.$sociallogin.'
 					   <div class="dropdown-menu" aria-labelledby="dropdownLoginLink" style="min-width:250px; padding: 15px; padding-bottom: 0px;">
 						  '.$loginform.'
@@ -101,21 +112,20 @@ class theme_shortcodes extends e_shortcode
 		//TODO Generic LANS. (not theme LANs) 	
 		if(ADMIN) 
 		{
-			$adminlink = '<a class="dropdown-item" href="'.e_ADMIN_ABS.'"><span class="fa fa-cogs"></span> '.LAN_LOGINMENU_11.'</a>';	
+			$adminlink = '<li><a href="'.e_ADMIN_ABS.'"><span class="fa fa-cogs"></span> '.LAN_LOGINMENU_11.'</a></li>';	
 		}	
 		else $adminlink = '';
+		
 			
 		$text = ' 
-		<li class="nav-item dropdown show">
-			<a class="nav-link dropdown-toggle" href="{LINK_URL}" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
-			   aria-expanded="true" title="{LINK_DESCRIPTION}"> {SETIMAGE: w=20} {USER_AVATAR: shape=circle} '. USERNAME.'</a>
-			   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				  <a class="dropdown-item" href="{LM_USERSETTINGS_HREF}"><span class="fa fa-cog"></span> '.LAN_SETTINGS.'</a>
-				  <a class="dropdown-item" href="{LM_PROFILE_HREF}"><span class="fa fa-user"></span> '.LAN_LOGINMENU_13.'</a>
-				  '.$adminlink.'
-				  <a class="dropdown-item" href="'.e_HTTP.'index.php?logout"><span class="fa fa-sign-out"></span> '.LAN_LOGOUT.'</a>
-			   </div>
-		</li>'; 
+     <li class="dropdown">{PM_NAV}</li>
+		 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{SETIMAGE: w=20} {USER_AVATAR: shape=circle} '. USERNAME.' <b class="caret"></b></a>
+	   <ul class="dropdown-menu">
+		  <li><a href="{LM_USERSETTINGS_HREF}"><span class="fa fa-cog"></span> '.LAN_SETTINGS.'</a></li>
+		  <li><a href="{LM_PROFILE_HREF}"><span class="fa fa-user"></span> '.LAN_LOGINMENU_13.'</a></li>
+		  '.$adminlink.'
+		  <li><a href="'.e_HTTP.'index.php?logout"><span class="fa fa-sign-out"></span> '.LAN_LOGOUT.'</a></li>
+	   </ul>'; 
 		return $tp->parseTemplate($text,true,$login_menu_shortcodes);
 	}
 
@@ -151,7 +161,7 @@ class theme_shortcodes extends e_shortcode
 
 		$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
 
-		return $body . $text;
+		return $text;
 	}
 
 
@@ -184,7 +194,7 @@ class theme_shortcodes extends e_shortcode
 
 		$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
 
-		return $body . $text;
+		return $text;
 
 
 	}
@@ -269,7 +279,7 @@ class theme_shortcodes extends e_shortcode
 
 		$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
 
-		return $body . $text;
+		return $text;
 	} 
 	
 	function sc_timeline_inverted() {
@@ -281,39 +291,37 @@ class theme_shortcodes extends e_shortcode
   
   function sc_teammembers()
 	{  
-  // return "";     
-	if($userclass = e107::pref('theme', 'teammemberclass', '2')) 
-	{
-	 
-		$teammembers = e107::getDb()->retrieve('user', '*', ' WHERE FIND_IN_SET('.$userclass.',user_class) ', TRUE);
-	 
-		$TM_TEMPLATE = e107::getCoreTemplate('user', 'teammember');
-		
-		$user_shortcodes = e107::getScBatch('user');
-		 
-		$text = '';
-		
-		if($teammembers)
+		$template = e107::getCoreTemplate('chapter', 'teammember');
+	  $sc = e107::getScBatch('page', null, 'cpage');
+ 
+    // TO GET ID OF BOOK WITH TIMELINE
+		$where  = "chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'teammember'";
+		$book_id = e107::getDb()->retrieve('page_chapters', 'chapter_id',  $where);
+
+    // TO GET ALL PAGES, WITH THEIR CHAPTERS WITH BOOK TIMELINE
+		$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . intval($book_id) . " ORDER BY p.page_order DESC ";
+
+		$text = e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
+
+		if($pageArray = e107::getDb()->retrieve($query, true))
 		{
-		foreach ($teammembers as $teammember)
-		  {     
-			$user_shortcodes->setVars($teammember);   
-		  $TEAMMEMBER_TEXT     = e107::getParser()->parseTemplate($TM_TEMPLATE , TRUE, $user_shortcodes);
-		  $text .= $TEAMMEMBER_TEXT;  
-		  }                                                    
+			foreach($pageArray as $page)
+			{
+				$sc->setVars($page);
+				$text .= e107::getParser()->parseTemplate($template['listItems']['item'], true, $sc);
+			}
 		}
 		else
 		{
-		    $text = "
-		    <div class='alert alert-info alert-block text-center'>".LAN_AG_THEME_15."</div>
-		    ";
-		}  
+			$text = '';
+		}
+
+		$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
+
+		return $text;
 	 
-		return $text ; 
-	 
-		}	
-	else return '';
-	}
+	}	
+ 
  
   function sc_sitedisclaimer($copyYear = NULL)
 	{

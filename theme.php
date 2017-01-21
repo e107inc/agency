@@ -4,7 +4,7 @@
  */
 if (!defined('e107_INIT')) { exit; }
 
-define("BOOTSTRAP", 	4);
+define("BOOTSTRAP", 	3);
 define("FONTAWESOME", 	4);
 define('VIEWPORT', 		"width=device-width, initial-scale=1.0");
 
@@ -19,22 +19,16 @@ $cndPref = e107::pref('theme', 'cdn','local');
 
 switch($cndPref)
 {		
-	case "local": //@todo  add back once correct core path is determined.
+  case "local": //@todo  add back once correct core path is determined.
 		e107::css('theme', 'vendor/bootstrap/css/bootstrap.min.css');
 		e107::css('theme', 'vendor/font-awesome/css/font-awesome.min.css');
-		e107::js('theme', 'vendor/tether/tether.min.js', 'jquery');
 		e107::js('theme', 'vendor/bootstrap/js/bootstrap.min.js', 'jquery');		
   break;	     
-/*	case "cdnjs":
+ 	case "cdnjs":  
 	default:
-		e107::css('url', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ');
-		e107::css('footer', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js');
-		e107::js('footer', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js', 'jquery');  */
-	default:
-		e107::css('theme', 'vendor/bootstrap/css/bootstrap.min.css');
-		e107::css('theme', 'vendor/font-awesome/css/font-awesome.min.css');
-		e107::js('theme', 'vendor/tether/tether.min.js', 'jquery');
-		e107::js('theme', 'vendor/bootstrap/js/bootstrap.min.js', 'jquery');
+    e107::js("footer", "https://cdn.jsdelivr.net/bootstrap/3.3.7/js/bootstrap.min.js", 'jquery', 2);
+    e107::css('url', 'https://cdn.jsdelivr.net/bootstrap/3.3.7/css/bootstrap.min.css');
+    e107::css('url',    'https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css');
 }
 
 e107::js('url','https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js','','2','<!--[if lt IE 9]>','');
@@ -73,7 +67,7 @@ if($inlinejs) {
 	e107::js("footer-inline", $inlinejs);
 }
 
-//define('BODYTAG', '<body id="page-top" class="index" />');
+define('BODYTAG', '<body id="page-top" data-spy="scroll" class="index layout-'.THEME_LAYOUT.'">');
  
 
 //e107::js("footer-inline", 	"$('.e-tip').tooltip({container: 'body'})"); // activate bootstrap tooltips. 
@@ -116,6 +110,15 @@ function tablestyle($caption, $text, $id='', $info=array())
 		return;
 	}
 	
+	if ($id == 'wm') // Example - If rendered from 'welcome message'
+	{
+		echo '
+	      <div class="intro-lead-in">' . $caption . '</div>
+	      <div class="intro-heading">' . $text . '</div>';
+		return;
+	}
+	
+	/* need be checked */
 	if($style == 'contact')
 	{
 	  echo '<div class="row">
@@ -149,7 +152,16 @@ function tablestyle($caption, $text, $id='', $info=array())
 		return;	
 		
 	}
-		
+	
+	if($id == 'news_latest_menu' OR $id == 'lastseen' OR  $id == 'news_categories_menu' OR $id == "news_months_menu" ) 
+	{
+		echo '<div class="panel panel-default">
+	  <div class="panel-heading">'.$caption.'</div> 
+	   '.$text.'
+  	</div>';
+		return;	
+	}
+ 	  		
 	if($style == 'menu')
 	{
 		echo '<div class="panel panel-default">
@@ -158,9 +170,9 @@ function tablestyle($caption, $text, $id='', $info=array())
 	   '.$text.'
 	  </div>
 	</div>';
-		return;
-		
+		return;	
 	}	
+	
 	
 	if($style == 'portfolio')
 	{
@@ -183,14 +195,7 @@ function tablestyle($caption, $text, $id='', $info=array())
 		return;
 	}
 
- if($id == 'wm') // Example - If rendered from 'welcome message' 
- {
-    echo '
-      <div class="intro-lead-in">'.$caption.'</div>
-      <div class="intro-heading">'.$text.'</div>';
- return; 
- 
- }
+
 	// default.
 	if(!empty($caption))
 	{
@@ -199,31 +204,34 @@ function tablestyle($caption, $text, $id='', $info=array())
 	echo $text;					
 	return;
 }
-
-$navbartype = 'navbar-inverse bg-inverse';
+// for multipage purpose
+$navbartype = 'navbar-inverse';
 if(THEME_LAYOUT == 'homepage'  )
 {
- $navbartype = "";
+ $navbartype = "navbar-default ";
 }
 
 // applied before every layout. 
 $LAYOUT['_header_'] = '
- <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-fixed-top '.$navbartype.'">
-        <div class="container">
-            <a class="navbar-brand page-scroll" href="#page-top">{SITENAME}</a>
-            <button class="btn btn-primary btn-toggle hidden-md-up float-xs-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fa fa-bars"></i></button>
-            <!-- Clearfix with a utility class added to allow for better navbar responsiveness. -->
-            <div class="clearfix hidden-md-up"></div>
-            <div class="collapse navbar-toggleable-sm" id="navbarResponsive">
-                <ul class="nav navbar-nav float-md-right">
-									 {NAVIGATION=main}
-									 {BOOTSTRAP_USERNAV}
-								</ul>
-            </div>
-        </div>
-    </nav>
- 
+<!-- Navigation -->
+<nav id="mainNav" class="navbar  '.$navbartype.' navbar-custom navbar-fixed-top">  
+  <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand page-scroll" href="#page-top">{SITENAME}</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav navbar-right">
+						 {NAVIGATION=main}
+						 {BOOTSTRAP_USERNAV}
+					</ul>
+      </div>
+  </div>
+</nav>
 ';
 
 // applied after every layout. 
@@ -270,12 +278,12 @@ $LAYOUT['homepage'] =  '
 <section id="services">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-xs-center">
+            <div class="col-lg-12 text-center">
                 {SETSTYLE=notitle}
                 {MENU=1}
             </div>
         </div>
-        <div class="row text-xs-center">
+        <div class="row text-center">
             <div class="col-md-4">
                 {SETSTYLE=notitle}
                 {MENU=11}
@@ -296,7 +304,7 @@ $LAYOUT['homepage'] =  '
 <section id="portfolio" class="bg-light-gray">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-xs-center">
+            <div class="col-lg-12 text-center">
                 {SETSTYLE=notitle}
                 {MENU=2}
             </div>
@@ -311,7 +319,7 @@ $LAYOUT['homepage'] =  '
 <section id="about">
     <div class="container">
         <div class="row">           
-          <div class="col-lg-12 text-xs-center">
+          <div class="col-lg-12 text-center">
             {SETSTYLE=notitle}
             {MENU=3} 
 					</div>
@@ -328,7 +336,7 @@ $LAYOUT['homepage'] =  '
     <section id="team" class="bg-light-gray">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-xs-center">
+                <div class="col-lg-12 text-center">
                     {SETSTYLE=notitle}
                 		{MENU=4}
                 </div>
@@ -337,7 +345,7 @@ $LAYOUT['homepage'] =  '
                 {TEAMMEMBERS}
             </div>
             <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-xs-center">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
                     <p class="large text-muted">'.e107::pref('theme', 'textafterteam','').'</p>
                 </div>
             </div>
@@ -358,9 +366,9 @@ $LAYOUT['homepage'] =  '
     <section id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-xs-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <div class="col-lg-12 text-center">
+                    {SETSTYLE=notitle}
+                		{MENU=5}
                 </div>
             </div>
             <div class="row">

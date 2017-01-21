@@ -8,13 +8,24 @@ body {
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .text-muted {
-  color: #777777 !important;
+  color: #777777;
 }
 .text-primary {
-  color: #fed136 !important;
+  color: #fed136;
 }
 p {
+  font-size: 14px;
   line-height: 1.75;
+}
+p.large {
+  font-size: 16px;
+}
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  outline: none;
 }
 a {
   color: #fed136;
@@ -36,7 +47,6 @@ h6 {
   font-weight: 700;
 }
 .img-centered {
-  display: block;
   margin: 0 auto;
 }
 .bg-light-gray {
@@ -57,7 +67,6 @@ h6 {
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
-.btn-primary:active:focus,
 .open .dropdown-toggle.btn-primary {
   color: white;
   background-color: #fec503;
@@ -105,7 +114,6 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:focus,
 .btn-xl:active,
 .btn-xl.active,
-.btn-xl:active:focus,
 .open .dropdown-toggle.btn-xl {
   color: white;
   background-color: #fec503;
@@ -138,42 +146,59 @@ fieldset[disabled] .btn-xl.active {
   color: #fed136;
   background-color: white;
 }
-#mainNav {
+.navbar-custom {
   background-color: #222222;
   border-color: transparent;
 }
-#mainNav .container {
-  padding: 0;
-}
-#mainNav .container .navbar-brand {
+.navbar-custom .navbar-brand {
   color: #fed136;
   font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
 }
-#mainNav .container .navbar-brand:hover,
-#mainNav .container .navbar-brand:focus,
-#mainNav .container .navbar-brand:active,
-#mainNav .container .navbar-brand.active {
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:active,
+.navbar-custom .navbar-brand.active {
   color: #fec503;
 }
-#mainNav .container .btn-toggle {
-  padding: .75em;
-  font-size: 80%;
+.navbar-custom .navbar-collapse {
+  border-color: rgba(255, 255, 255, 0.02);
 }
-#mainNav .container .navbar-nav .nav-item .nav-link {
-  font-size: 90%;
-  padding: 0.75em 0;
+.navbar-custom .navbar-toggle {
+  background-color: #fed136;
+  border-color: #fed136;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: white;
+  font-size: 12px;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #fed136;
+}
+.navbar-custom .nav li a {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
   color: white;
 }
-#mainNav .container .navbar-nav .nav-item .nav-link:hover,
-#mainNav .container .navbar-nav .nav-item .nav-link.active {
+.navbar-custom .nav li a:hover,
+.navbar-custom .nav li a:focus {
   color: #fed136;
+  outline: none;
+}
+.navbar-custom .navbar-nav > .active > a {
+  border-radius: 0;
+  color: white;
+  background-color: #fed136;
+}
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+  color: white;
+  background-color: #fec503;
 }
 @media (min-width: 768px) {
-  #mainNav {
+  .navbar-custom {
     background-color: transparent;
     padding: 25px 0;
     -webkit-transition: padding 0.3s;
@@ -181,22 +206,23 @@ fieldset[disabled] .btn-xl.active {
     transition: padding 0.3s;
     border: none;
   }
-  #mainNav .navbar-brand {
-    font-size: 1.75em;
+  .navbar-custom .navbar-brand {
+    font-size: 2em;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
   }
-  #mainNav .navbar-nav .nav-item .nav-link {
-    padding: 1.2em 0.4em !important;
+  .navbar-custom .navbar-nav > .active > a {
+    border-radius: 3px;
   }
-  #mainNav.navbar-shrink {
+}
+@media (min-width: 768px) {
+  .navbar-custom.affix {
     background-color: #222222;
-    padding: 5px 0;
+    padding: 10px 0;
   }
-  #mainNav.navbar-shrink .navbar-brand {
-    padding: 0.65em 0;
-    font-size: 1.25em;
+  .navbar-custom.affix .navbar-brand {
+    font-size: 1.5em;
   }
 }
 header {
@@ -587,14 +613,12 @@ footer {
   text-align: center;
 }
 footer span.copyright {
-  font-size: 90%;
   line-height: 40px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   text-transform: none;
 }
 footer ul.quicklinks {
-  font-size: 90%;
   margin-bottom: 0;
   line-height: 40px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -632,7 +656,7 @@ ul.social-buttons li a:active {
 .portfolio-modal .modal-dialog {
   margin: 0;
   height: 100%;
-  max-width: none;
+  width: auto;
 }
 .portfolio-modal .modal-content {
   border-radius: 0;

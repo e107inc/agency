@@ -1,4 +1,4 @@
-// Contact Form Scripts
+// Contact Form Scripts 2
 
 $(function() {
 
@@ -15,8 +15,7 @@ $(function() {
             var name = $("input#contactName").val();
             var email = $("input#contactEmail").val();
             var phone = $("input#contactPhone").val();
-            var message = $("textarea#contactBody").val();
-            var sendcontactus = $("input#send-contactus").val();           
+            var message = $("textarea#contactBody").val();           
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -30,7 +29,6 @@ $(function() {
                     phone: phone,
                     email: email,
                     message: message,
-                    send-contactus: sendcontactus
                 },
                 cache: false,
                 success: function() {
