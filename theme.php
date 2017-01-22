@@ -153,7 +153,8 @@ function tablestyle($caption, $text, $id='', $info=array())
 		
 	}
 	
-	if($id == 'news_latest_menu' OR $id == 'lastseen' OR  $id == 'news_categories_menu' OR $id == "news_months_menu" ) 
+	if($id == 'news_latest_menu' OR $id == 'lastseen' OR  $id == 'news_categories_menu' OR $id == "news_months_menu" 
+	OR $id == 'comment_menu') 
 	{
 		echo '<div class="panel panel-default">
 	  <div class="panel-heading">'.$caption.'</div> 

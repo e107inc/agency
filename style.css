@@ -40,6 +40,12 @@ header .intro-text .intro-heading p {
     border-color: #222;
 }
 
+.btn-default {
+    color: white;
+    background-color: #222;
+    border-color: #222;
+}
+
 footer {
     padding: 25px 0;
     text-align: center;

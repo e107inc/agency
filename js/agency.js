@@ -11,16 +11,15 @@
     
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this); 
-				if ($(this).attr('data-target') != '#') {       
-        var url = $anchor.attr('href'), hash = "#" + url.split('#')[1];        
-             alert(hash);
-	        $('html, body').stop().animate({
-							scrollTop: ($(hash).offset().top - 50)
-	        }, 1250, 'easeInOutExpo'); 
-        event.preventDefault();  
-				}
-    });  
+        var $anchor = $(this);
+        var url = $anchor.attr('href'), $hash = "#" + url.split('#')[1]; 
+        if ($(this).attr('data-target') != '#') {
+        $('html, body').stop().animate({
+            scrollTop: ($($hash.attr('href')).offset().top - 50)
+        }, 1250, 'easeInOutExpo');
+        event.preventDefault();
+        }
+    });
  
     // Closes the Responsive Menu on Menu Item Click
     $('.navbar-collapse ul li a').click(function(){ 

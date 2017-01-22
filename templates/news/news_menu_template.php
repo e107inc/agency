@@ -20,8 +20,6 @@ $NEWS_MENU_TEMPLATE['category']['item']        = '
 	<li class="list-group-item"><a class="e-menu-link newscats{active}" href="{NEWS_CATEGORY_URL}">{NEWS_CATEGORY_TITLE}</a> {NEWS_CATEGORY_NEWS_COUNT} </li>
 '; 
 
-
-
 // months menu
 $NEWS_MENU_TEMPLATE['months']['start']       = '<ul class="list-group news-menu-months">';
 $NEWS_MENU_TEMPLATE['months']['end']         = '</ul>';
@@ -29,9 +27,6 @@ $NEWS_MENU_TEMPLATE['months']['item']        = '
 	<li class="list-group-item"><a class="e-menu-link newsmonths{active}" href="{url}">{month} </a> <span class="badge badge-primary">{count}</span></li>
 ';
  
-
- /*
-
 // Other News Menu. 
 $NEWS_MENU_TEMPLATE['other']['caption'] 	= TD_MENU_L1;
 $NEWS_MENU_TEMPLATE['other']['start']		= "<div id='otherNews' data-interval='false' class='carousel slide othernews-block'>
@@ -45,11 +40,7 @@ $NEWS_MENU_TEMPLATE['other']['item']		= '<div class="item {ACTIVE}">
             									</div>';									
 $NEWS_MENU_TEMPLATE['other']['end']			= "</div></div>";
 
-
-
-
-
-
+ 
 
 
 // Other News Menu. 2 
@@ -81,10 +72,10 @@ $NEWS_MENU_TEMPLATE['grid']['end']      = '</div>';
 
 
 // $NEWS_MENU_WRAPPER['grid']['NEWSTITLE'] = "<span style='color:red'>{---}</span>"; // example
-			*/
+	 
 
 /* Carousel Menu */
-									/*
+							 
 $NEWS_MENU_TEMPLATE['carousel']['start'] = '
 										    <div id="news-carousel" class="carousel slide" data-ride="carousel">
 										        <div class="row">
@@ -118,4 +109,4 @@ $NEWS_MENU_TEMPLATE['carousel']['item'] = '<!-- Start Item -->
 
 
 $NEWS_MENU_TEMPLATE['carousel']['nav'] = '<li data-target="#news-carousel" data-slide-to="{COUNT}" class="{ACTIVE}"><a href="#">{NEWS_SUMMARY}</a></li>';
-*/
+ 

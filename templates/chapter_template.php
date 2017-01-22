@@ -161,7 +161,7 @@ $CHAPTER_TEMPLATE['modalportfolio']['listItems']['item'] 			= '
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
                                 <h2>{CPAGETITLE}</h2>
-                                <p class="item-intro text-muted">This has to be text related to page not LAN Lorem ipsum dolor sit amet consectetur.</p>
+                                <p class="item-intro text-muted">{CPAGEFIELD: name=introtext}</p>
                                 <img class="img-responsive img-centered" src="{CMENUIMAGE=url}" alt="{CMENUTITLE}">                               
                                 <p> {CPAGEBODY}</p>
                                     <ul class="list-inline">
