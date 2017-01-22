@@ -36,7 +36,7 @@ $CONTACT_TEMPLATE['homepage'] =  '
 		          </div>
 		      </div>
 		      <div class="clearfix"></div>
-		      <div class="col-lg-12 text-xs-center">
+		      <div class="col-lg-12 text-center">
 		          <div id="success"></div>
 		          <input type="submit" id="send-contactus" name="send-contactus" value="'.LAN_AG_THEME_13.'" class="btn btn-xl" />
 		      </div>
