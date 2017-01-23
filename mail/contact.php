@@ -59,7 +59,7 @@ include_lan(e_LANGUAGEDIR.e_LANGUAGE.'/lan_'.e_PAGE);
 
 		if (USER)
 		{
-			$body .= "<tr><td>User:</td><td>#".USERID." ".USERNAME."</td></tr>";
+			$body .= "<tr><td>".LAN_USER.":</td><td>#".USERID." ".USERNAME."</td></tr>";
 		}
 
 		if(empty($_POST['contact_person']) && !empty($pref['sitecontacts'])) // only 1 person, so contact_person not posted.

@@ -1,7 +1,9 @@
 <?php
 
 if (!defined('e107_INIT')) { exit; }
- 
+
+e107::lan('theme', 'admin',true);
+
 // Dummy Theme Configuration File.
 class theme_config implements e_theme_config
 {
@@ -23,7 +25,7 @@ class theme_config implements e_theme_config
 			'inlinecss'  				=> array('title' => LAN_THEMEPREF_01, 'type'=>'textarea', 'writeParms'=>array('size'=>'block-level'),'help'=>''),
 			'inlinejs'   				=> array('title' => LAN_THEMEPREF_02, 'type'=>'textarea', 'writeParms'=>array('size'=>'block-level'),'help'=>''),			
 			'cdn' => array('title' => 'CDN', 'type'=>'dropdown', 
-			'writeParms'=>array('optArray'=>array( 'cdnjs' => 'CDNJS (Cloudflare)', 'jsdelivr' => 'jsDelivr'  , 'local' => 'Local folder' )))
+			'writeParms'=>array('optArray'=>array( 'cdnjs' => 'CDNJS (Cloudflare)', 'jsdelivr' => 'jsDelivr'  , 'local' => LAN_AG_THEMEPREF_04)))
  		);
 
 
