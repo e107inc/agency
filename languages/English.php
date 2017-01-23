@@ -4,7 +4,7 @@
 |        e107 website content management system English Language File
 |        Released under the terms and conditions of the
 |        GNU General Public License (http://gnu.org).
-|        Last Modified: 2017/01/19 16:05:43
+|        Last Modified: 2017/01/23 09:09:43
 |
 |        $Author: Yesszus $
 |
@@ -26,7 +26,7 @@ define("LAN_AG_THEME_12", "Your Message");
 define("LAN_AG_THEME_13", "Send Message");
 define("LAN_AG_THEME_14", "No Portfolio items");             /*ok*/
 define("LAN_AG_THEME_15", "No members");                     /*ok*/
-define("LAN_AG_THEME_16", "");
+define("LAN_AG_THEME_16", "You Might Also Like");
 define("LAN_AG_THEME_17", "Category : ");
 define("LAN_AG_THEME_18", "Articles");                       /*ok*/
 ?>
