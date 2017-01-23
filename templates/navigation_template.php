@@ -12,8 +12,8 @@ $NAVIGATION_TEMPLATE['main']['start'] = '';
 
 // Main Link
 $NAVIGATION_TEMPLATE['main']['item'] = '
-	<li>
-		<a class="page-scroll" role="button" data-target="{LINK_TARGET}" href="{LINK_URL}"{LINK_OPEN} title="{LINK_DESCRIPTION}">
+	<li class="page-scroll">
+		<a  role="button" data-target="{LINK_TARGET}" href="{LINK_URL}"{LINK_OPEN} title="{LINK_DESCRIPTION}">
 		 {LINK_ICON}{LINK_NAME} 
 		</a> 
 	</li>
@@ -21,8 +21,8 @@ $NAVIGATION_TEMPLATE['main']['item'] = '
 
 // Main Link - active state
 $NAVIGATION_TEMPLATE['main']['item_active'] = '
-	<li class="active">
-		<a class="page-scroll" role="button" data-target="{LINK_TARGET}" href="{LINK_URL}"{LINK_OPEN} title="{LINK_DESCRIPTION}">
+	<li class="page-scroll active">
+		<a class="e-tip" role="button"  data-target="{LINK_TARGET}" href="{LINK_URL}"{LINK_OPEN} title="{LINK_DESCRIPTION}">
 		 {LINK_ICON} {LINK_NAME}
 		</a>
 	</li>

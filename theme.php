@@ -276,7 +276,7 @@ $LAYOUT['homepage'] =  '
 </div>
 
 <!-- Services Section No.1 menu 1 + 11 12 13 -->
-<section id="services">
+<section id="ourservices" class="">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
