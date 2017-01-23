@@ -165,11 +165,11 @@ $CHAPTER_TEMPLATE['modalportfolio']['listItems']['item'] 			= '
                                 <img class="img-responsive img-centered" src="{CMENUIMAGE=url}" alt="{CMENUTITLE}">                               
                                 <p> {CPAGEBODY}</p>
                                     <ul class="list-inline">
-                                    <li>'.LAN_AG_THEME_01.': {CPAGEDATE=short}</li>
-                                    <li>'.LAN_AG_THEME_02.': {CMENUTITLE}</li>
-                                    <li>'.LAN_AG_THEME_17.': {CHAPTER_NAME}</li>
+                                    <li>'.LAN_AG_THEME_01.' {CPAGEDATE=short}</li>
+                                    <li>'.LAN_AG_THEME_02.' {CMENUTITLE}</li>
+                                    <li>'.LAN_AG_THEME_17.' {CHAPTER_NAME}</li>
                                 </ul>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>'.LAN_AG_THEME_00.'</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> '.LAN_AG_THEME_00.'</button>
                             </div>
                         </div>
                     </div>
