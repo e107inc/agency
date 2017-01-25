@@ -214,11 +214,11 @@ $CHAPTER_TEMPLATE['teammember']['listItems']['item'] 				= '
                         <h4>{CPAGETITLE}</h4>
                         <p class="text-muted">{CMENUTITLE}</p>
                         <ul class="list-inline social-buttons">
-                            <li><a href="{CPAGEFIELD: name=twitter}"><i class="fa fa-twitter"></i></a>
+                            <li><a href="{CPAGEFIELD: name=twitter mode=raw}"><i class="fa fa-twitter"></i></a>
                             </li>
-                            <li><a href="{CPAGEFIELD: name=facebook}"><i class="fa fa-facebook"></i></a>
+                            <li><a href="{CPAGEFIELD: name=facebook mode=raw}"><i class="fa fa-facebook"></i></a>
                             </li>
-                            <li><a href="{CPAGEFIELD: name=linkedin}"><i class="fa fa-linkedin"></i></a>
+                            <li><a href="{CPAGEFIELD: name=linkedin mode=raw}"><i class="fa fa-linkedin"></i></a>
                             </li>
                         </ul>
                     </div>
