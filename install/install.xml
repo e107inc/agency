@@ -10,7 +10,7 @@
 			<field name="gen_ip">Welcome To Our Studio!</field>
 			<field name="gen_intdata">0</field>
 			<field name="gen_chardata"><![CDATA[[html]<p>IT&#039;S NICE TO MEET YOU</p>
-<p><a href=&quot;#services&quot; class=&quot;page-scroll btn btn-xl&quot;>Tell Me More</a></p>[/html]]]></field>
+<p><a href=&quot;#ourservices&quot; class=&quot;page-scroll btn btn-xl&quot;>Tell Me More</a></p>[/html]]]></field>
 		</item>
 	</dbTable>
 	<dbTable name="page">
