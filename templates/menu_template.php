@@ -61,6 +61,29 @@
 	<p class="text-muted">{CMENUBODY}';
 	$MENU_TEMPLATE['home-services']['end'] 				= ' '; 
  
- 	
+
+    // Cam rework.
+
+	$MENU_TEMPLATE['teammember']['start'] 				= '' ;
+	$MENU_TEMPLATE['teammember']['body'] 				= '
+	                <div class="col-sm-4">
+	                    <div class="team-member">
+	                        <img src="{CMENUIMAGE=url}" class="img-responsive img-circle" alt="">
+	                        <h4>{CPAGETITLE}</h4>
+	                        <p class="text-muted">{CMENUTITLE}</p>
+	                        <ul class="list-inline social-buttons">
+	                            <li><a href="{CPAGEFIELD: name=twitter&mode=raw}"><i class="fa fa-twitter"></i></a>
+	                            </li>
+	                            <li><a href="{CPAGEFIELD: name=facebook&mode=raw}"><i class="fa fa-facebook"></i></a>
+	                            </li>
+	                            <li><a href="{CPAGEFIELD: name=linkedin&mode=raw}"><i class="fa fa-linkedin"></i></a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                </div>';
+	$MENU_TEMPLATE['teammember']['end'] 					= '';
+
+
+
 	
 ?>

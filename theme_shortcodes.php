@@ -290,7 +290,11 @@ class theme_shortcodes extends e_shortcode
   
   
   function sc_teammembers()
-	{  
+	{
+
+		return e107::getParser()->parseTemplate("{CHAPTER_MENUS: id=our-team}",true);
+/*
+
 		$template = e107::getCoreTemplate('chapter', 'teammember');
 	  $sc = e107::getScBatch('page', null, 'cpage');
  
@@ -318,7 +322,7 @@ class theme_shortcodes extends e_shortcode
 
 		$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
 
-		return $text;
+		return $text;*/
 	 
 	}	
  

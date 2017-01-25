@@ -205,7 +205,8 @@ $CHAPTER_TEMPLATE['timeline']['listItems']['end'] 					= '
     </li>
 </ul>
 ';
-
+/*
+//@see  menu_template.php
 $CHAPTER_TEMPLATE['teammember']['listItems']['start'] 				= '' ;
 $CHAPTER_TEMPLATE['teammember']['listItems']['item'] 				= '
                 <div class="col-sm-4">
@@ -223,5 +224,7 @@ $CHAPTER_TEMPLATE['teammember']['listItems']['item'] 				= '
                         </ul>
                     </div>
                 </div>'; 
-$CHAPTER_TEMPLATE['teammember']['listItems']['end'] 					= '';
+$CHAPTER_TEMPLATE['teammember']['listItems']['end'] 					= '';*/
+
+
 ?>
