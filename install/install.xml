@@ -590,7 +590,7 @@
 			<field name="menu_text"></field>
 			<field name="menu_image">{e_THEME}agency/install/team/1.jpg</field>
 			<field name="menu_icon"></field>
-			<field name="menu_template">default</field>
+			<field name="menu_template">teammember</field>
 			<field name="menu_class">0</field>
 			<field name="menu_button_url"></field>
 			<field name="menu_button_text"></field>
@@ -622,7 +622,7 @@
 			<field name="menu_text"></field>
 			<field name="menu_image">{e_THEME}agency/install/team/2.jpg</field>
 			<field name="menu_icon"></field>
-			<field name="menu_template">default</field>
+			<field name="menu_template">teammember</field>
 			<field name="menu_class">0</field>
 			<field name="menu_button_url"></field>
 			<field name="menu_button_text"></field>
@@ -654,7 +654,7 @@
 			<field name="menu_text"></field>
 			<field name="menu_image">{e_THEME}agency/install/team/3.jpg</field>
 			<field name="menu_icon"></field>
-			<field name="menu_template">default</field>
+			<field name="menu_template">teammember</field>
 			<field name="menu_class">0</field>
 			<field name="menu_button_url"></field>
 			<field name="menu_button_text"></field>
@@ -808,17 +808,17 @@
 			<field name="chapter_fields">{
     "facebook": {
         "title": "facebook",
-        "type": "text",
+        "type": "url",
         "writeParms": ""
     },
     "twitter": {
         "title": "twitter",
-        "type": "text",
+        "type": "url",
         "writeParms": ""
     },
     "linkedin": {
         "title": "linkedin",
-        "type": "text",
+        "type": "url",
         "writeParms": ""
     }
 }</field>
