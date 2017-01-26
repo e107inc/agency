@@ -44,8 +44,8 @@ e107::css('theme', 	'css/agency.min.css');
 
 
 e107::js("footer", 	'https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', 'jquery'); 
-e107::js("theme", 	'js/jqBootstrapValidation.js"', 'jquery');
-e107::js("theme", 	'js/contact_me.js', 'jquery');
+//e107::js("theme", 	'js/jqBootstrapValidation.js"', 'jquery');
+//e107::js("theme", 	'js/contact_me.js', 'jquery');
 e107::js("theme", 	'js/agency.js', 'jquery'); 
 
 
