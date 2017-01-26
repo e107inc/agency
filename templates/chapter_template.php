@@ -179,7 +179,8 @@ $CHAPTER_TEMPLATE['modalportfolio']['listItems']['item'] 			= '
     </div>';
  
 $CHAPTER_TEMPLATE['modalportfolio']['listItems']['end'] 					= '';
-
+/*
+//@see  menu_template.php
 
 $CHAPTER_TEMPLATE['timeline']['listItems']['start'] 				= '<ul class="timeline">{SETIMAGE: w=200&h=200&crop=1}' ;
 $CHAPTER_TEMPLATE['timeline']['listItems']['item'] 				= '
@@ -205,8 +206,8 @@ $CHAPTER_TEMPLATE['timeline']['listItems']['end'] 					= '
     </li>
 </ul>
 ';
-/*
-//@see  menu_template.php
+
+
 $CHAPTER_TEMPLATE['teammember']['listItems']['start'] 				= '' ;
 $CHAPTER_TEMPLATE['teammember']['listItems']['item'] 				= '
                 <div class="col-sm-4">

@@ -52,35 +52,81 @@
 
             
 
-	$MENU_TEMPLATE['home-services']['start'] 			= 
-	'<span class="fa-stack fa-4x">
-	<i class="fa fa-circle fa-stack-2x text-primary"></i>
-	<i class="fa {CMENU_BUTTON_TEXT} fa-stack-1x fa-inverse"></i>
-	</span>'; 
+	$MENU_TEMPLATE['home-services']['start'] 			= '<span class="fa-stack fa-4x">
+															<i class="fa fa-circle fa-stack-2x text-primary"></i>
+															<i class="fa fa-{CMENUICON=css} fa-stack-1x fa-inverse"></i>
+															</span>';
 	$MENU_TEMPLATE['home-services']['body'] 				= '<h4 class="service-heading">{CMENUTITLE}</h4>
-	<p class="text-muted">{CMENUBODY}';
+																<p class="text-muted">{CMENUBODY}';
 	$MENU_TEMPLATE['home-services']['end'] 				= ' '; 
  
 
     // Cam rework.
 
+/*
+	$MENU_TEMPLATE['portfolio']['start'] 				= '{SETIMAGE: w=400&h=289&crop=1}' ;
+	$MENU_TEMPLATE['portfolio']['body'] 				= '<div class="col-md-4 col-sm-6 portfolio-item {CHAPTERSEF}">
+										                    <a href="#portfolio-{CPAGEID}" class="portfolio-link" data-toggle="modal">
+										                        <div class="portfolio-hover">
+										                            <div class="portfolio-hover-content">
+										                                <i class="fa fa-plus fa-3x"></i>
+										                            </div>
+										                        </div>
+										                        <img src="{CMENUIMAGE=url}" class="img-responsive" alt="{CMENUTITLE}">
+										                    </a>
+										                    <div class="portfolio-caption">
+										                        <h4>{CMENUTITLE}</h4>
+										                        <p class="text-muted">{CHAPTER_NAME}</p>
+										                    </div>
+										                </div>';
+
+	$MENU_TEMPLATE['portfolio']['end'] 			    = '';
+*/
+
+
+    $MENU_TEMPLATE['timeline']['start'] 			= '<ul class="timeline">{SETIMAGE: w=200&h=200&crop=1}' ;
+	$MENU_TEMPLATE['timeline']['body'] 				= '<li {TIMELINE_INVERTED}>
+														    <div class="timeline-image">
+														        <img class="img-circle img-responsive" src="{CMENUIMAGE=url}" alt="">
+														    </div>
+														    <div class="timeline-panel">
+														        <div class="timeline-heading">
+														            <h4>{CHAPTER_NAME}</h4>
+														            <h4 class="subheading">{CPAGETITLE}</h4>
+														        </div>
+														        <div class="timeline-body">
+														            <p class="text-muted">{CPAGEBODY}</p>
+														        </div>
+														    </div>
+														</li>';
+	$MENU_TEMPLATE['timeline']['end'] 				= '
+													    <li>
+													        <div class="timeline-image">
+													            <h4>{TIMELINE_FOOTER}</h4>
+													        </div>
+													    </li>
+													</ul>
+													';
+
+
+
+
 	$MENU_TEMPLATE['teammember']['start'] 				= '' ;
-	$MENU_TEMPLATE['teammember']['body'] 				= '
-	                <div class="col-sm-4">
-	                    <div class="team-member">
-	                        <img src="{CMENUIMAGE=url}" class="img-responsive img-circle" alt="">
-	                        <h4>{CPAGETITLE}</h4>
-	                        <p class="text-muted">{CMENUTITLE}</p>
-	                        <ul class="list-inline social-buttons">
-	                            <li><a href="{CPAGEFIELD: name=twitter&mode=raw}"><i class="fa fa-twitter"></i></a>
-	                            </li>
-	                            <li><a href="{CPAGEFIELD: name=facebook&mode=raw}"><i class="fa fa-facebook"></i></a>
-	                            </li>
-	                            <li><a href="{CPAGEFIELD: name=linkedin&mode=raw}"><i class="fa fa-linkedin"></i></a>
-	                            </li>
-	                        </ul>
-	                    </div>
-	                </div>';
+	$MENU_TEMPLATE['teammember']['body'] 				= '<div class="col-sm-4">
+										                    <div class="team-member">
+										                        <img src="{CMENUIMAGE=url}" class="img-responsive img-circle" alt="">
+										                        <h4>{CPAGETITLE}</h4>
+										                        <p class="text-muted">{CMENUTITLE}</p>
+										                        <ul class="list-inline social-buttons">
+										                            <li><a href="{CPAGEFIELD: name=twitter&mode=raw}"><i class="fa fa-twitter"></i></a>
+										                            </li>
+										                            <li><a href="{CPAGEFIELD: name=facebook&mode=raw}"><i class="fa fa-facebook"></i></a>
+										                            </li>
+										                            <li><a href="{CPAGEFIELD: name=linkedin&mode=raw}"><i class="fa fa-linkedin"></i></a>
+										                            </li>
+										                        </ul>
+										                    </div>
+										                </div>';
 	$MENU_TEMPLATE['teammember']['end'] 					= '';
 
 
