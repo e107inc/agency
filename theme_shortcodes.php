@@ -388,14 +388,20 @@
 		 */
 		function sc_agency_contactform($parm = '')
 		{
-			e107::lan('core', 'contact');
-			$head = '<form name="sentMessage"  id="contactForm" novalidate>';
-			$template = e107::getCoreTemplate('contact', 'homepage');
-			$contact_shortcodes = e107::getScBatch('contact');
-			$foot = '</form>';
-			$text = e107::getParser()->parseTemplate($head . $template . $foot, true, $contact_shortcodes);
-
-			return e107::getRender()->tablerender(LANCONTACT_00, $text, 'contact-menu');
+			if((e107::getPref('sitecontacts')== e_UC_NOBODY) && trim(SITECONTACTINFO) == "")
+			{
+				return "";
+			}
+			else 
+			{
+				e107::lan('core', 'contact');
+				$head = '<form id="contact-menu" action="'.e_HTTP.'contact.php" method="post" >';
+				$template = e107::getCoreTemplate('contact', 'homepage');
+				$contact_shortcodes = e107::getScBatch('contact');
+				$foot = '</form>';
+				$text = e107::getParser()->parseTemplate($head . $template . $foot, true, $contact_shortcodes);
+				return e107::getRender()->tablerender(LANCONTACT_00, $text, 'contact-menu');
+			}
 		}
 	}
 
