@@ -123,9 +123,12 @@ $CHAPTER_TEMPLATE['panel']['listPages']['start'] 				= "{CHAPTER_BREADCRUMB}<div
 $CHAPTER_TEMPLATE['panel']['listPages']['item'] 				= "<div class='section'><div class='row'>{CPAGEMENU}</div></div>";
 $CHAPTER_TEMPLATE['panel']['listPages']['end'] 					= "</div>";	
 
-
+//@todo move to menu template once {BOOK_MENUS} is completed.
 $CHAPTER_TEMPLATE['portfolio']['listItems']['caption']		= ''; 
-$CHAPTER_TEMPLATE['portfolio']['listItems']['start'] 				= '{SETIMAGE: w=400&h=289&crop=1}' ;
+$CHAPTER_TEMPLATE['portfolio']['listItems']['start'] 				= '<div class="row"><div class="col-lg-12 text-center">
+										                    <h2 class="section-heading">{BOOK_NAME}</h2>
+										                    <h3 class="section-subheading text-muted">{BOOK_DESCRIPTION}</h3>
+										                </div></div>{SETIMAGE: w=400&h=289&crop=1}' ;
 $CHAPTER_TEMPLATE['portfolio']['listItems']['item'] 				= '
                 <div class="col-md-4 col-sm-6 portfolio-item {CHAPTERSEF}">
                     <a href="#portfolio-{CPAGEID}" class="portfolio-link" data-toggle="modal">

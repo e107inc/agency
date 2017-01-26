@@ -43,22 +43,30 @@
 													       </div>
 													       '; 
 	$MENU_TEMPLATE['2-column_2:1_text-left']['end'] 	= '';  
- 
+ /*
 	$MENU_TEMPLATE['home-introduction-text']['start'] 			= ''; 
 	$MENU_TEMPLATE['home-introduction-text']['body'] 				= 
-									'<h2 class="section-heading">{CMENUTITLE}</h2>
-								   <h3 class="section-subheading text-muted">{CMENUBODY}</h3>';
+																'<h2 class="section-heading">{CMENUTITLE}</h2>
+															   <h3 class="section-subheading text-muted">{CMENUBODY}</h3>';
 	$MENU_TEMPLATE['home-introduction-text']['end'] 				= '';
 
-            
 
-	$MENU_TEMPLATE['home-services']['start'] 			= '<span class="fa-stack fa-4x">
-															<i class="fa fa-circle fa-stack-2x text-primary"></i>
+           */
+
+
+
+
+
+
+	$MENU_TEMPLATE['home-services']['start'] 			= '<div class="col-lg-12 text-center">
+										                    <h2 class="section-heading">{CHAPTER_NAME}</h2>
+										                    <h3 class="section-subheading text-muted">{CHAPTER_DESCRIPTION}</h3>
+										                </div><div class="row text-center">';
+	$MENU_TEMPLATE['home-services']['body'] 				= '<div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i>
 															<i class="fa fa-{CMENUICON=css} fa-stack-1x fa-inverse"></i>
-															</span>';
-	$MENU_TEMPLATE['home-services']['body'] 				= '<h4 class="service-heading">{CMENUTITLE}</h4>
-																<p class="text-muted">{CMENUBODY}';
-	$MENU_TEMPLATE['home-services']['end'] 				= ' '; 
+															</span><h4 class="service-heading">{CMENUTITLE}</h4>
+																<p class="text-muted">{CMENUBODY}</div>';
+	$MENU_TEMPLATE['home-services']['end'] 				= '</div>';
  
 
     // Cam rework.
@@ -84,7 +92,10 @@
 */
 
 
-    $MENU_TEMPLATE['timeline']['start'] 			= '<ul class="timeline">{SETIMAGE: w=200&h=200&crop=1}' ;
+    $MENU_TEMPLATE['timeline']['start'] 			= '<div class="row"><div class="col-lg-12 text-center">
+										                    <h2 class="section-heading">{CHAPTER_NAME}</h2>
+										                    <h3 class="section-subheading text-muted">{CHAPTER_DESCRIPTION}</h3>
+										                </div></div><div class="row"><ul class="timeline">{SETIMAGE: w=200&h=200&crop=1}' ;
 	$MENU_TEMPLATE['timeline']['body'] 				= '<li {TIMELINE_INVERTED}>
 														    <div class="timeline-image">
 														        <img class="img-circle img-responsive" src="{CMENUIMAGE=url}" alt="">
@@ -106,12 +117,16 @@
 													        </div>
 													    </li>
 													</ul>
+													</div>
 													';
 
 
 
 
-	$MENU_TEMPLATE['teammember']['start'] 				= '' ;
+	$MENU_TEMPLATE['teammember']['start'] 				= '<div class="row"><div class="col-lg-12 text-center">
+										                    <h2 class="section-heading">{CHAPTER_NAME}</h2>
+										                    <h3 class="section-subheading text-muted">{CHAPTER_DESCRIPTION}</h3>
+										                </div></div><div class="row">' ;
 	$MENU_TEMPLATE['teammember']['body'] 				= '<div class="col-sm-4">
 										                    <div class="team-member">
 										                        <img src="{CMENUIMAGE=url}" class="img-responsive img-circle" alt="">
@@ -127,7 +142,7 @@
 										                        </ul>
 										                    </div>
 										                </div>';
-	$MENU_TEMPLATE['teammember']['end'] 					= '';
+	$MENU_TEMPLATE['teammember']['end'] 					= '</div>';
 
 
 

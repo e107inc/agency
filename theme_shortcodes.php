@@ -132,7 +132,7 @@
 
 
 		/**
-		 * TODO Replace with a core shortcode.
+		 * TODO Replace with a core shortcode. {BOOK_MENUS}
 		 * @return string
 		 */
 		function sc_portfolioitems()
@@ -152,10 +152,14 @@
 
 			$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . intval($book_id) . " ORDER BY p.page_order DESC ";
 
-			$text = e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
+
 
 			if($pageArray = e107::getDb()->retrieve($query, true))
 			{
+
+				$sc->setVars($pageArray[0]); // set so book/chapter info is available to 'start' template.
+				$text = e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
+
 				foreach($pageArray as $page)
 				{
 					$sc->setVars($page);
@@ -166,6 +170,8 @@
 			{
 				$text = LAN_AG_THEME_14;
 			}
+
+
 
 			$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
 
@@ -266,13 +272,13 @@
 		   }*/
 
 
-
+/*
 		//@todo remove and place shortcode directly into theme.php
 		function sc_timelineitems()
 		{
 
 			return e107::getParser()->parseTemplate("{CHAPTER_MENUS: name=timeline}", true);
-			/*
+
 					$template = e107::getCoreTemplate('chapter', 'timeline');
 				  $sc = e107::getScBatch('page', null, 'cpage');
 
@@ -300,9 +306,9 @@
 
 					$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
 
-					return $text;*/
+					return $text;
 		}
-
+*/
 		/**
 		 * @return string
 		 */
@@ -320,13 +326,13 @@
 		}
 
 
-
+		/*
 		//@todo remove and place shortcode directly into theme.php
 		function sc_teammembers()
 		{
 
 			return e107::getParser()->parseTemplate("{CHAPTER_MENUS: name=our-team}", true);
-			/*
+
 
 					$template = e107::getCoreTemplate('chapter', 'teammember');
 				  $sc = e107::getScBatch('page', null, 'cpage');
@@ -355,10 +361,10 @@
 
 					$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
 
-					return $text;*/
+					return $text;
 
 		}
-
+*/
 
 		function sc_sitedisclaimer($copyYear = null)
 		{

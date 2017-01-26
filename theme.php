@@ -121,12 +121,14 @@ function tablestyle($caption, $text, $id='', $info=array())
 	/* need be checked */
 	if($style == 'contact')
 	{
-	  echo '<div class="row">
-          <div class="col-lg-12 text-center">
-              <h2>'.$caption.'</h2>
-              <hr class="star-primary">
-          </div>
-      </div>
+		//todo Find a place for the sub-heading (but not the page/menu table) possibly theme prefs.
+
+		echo '<div class="col-lg-12 text-center">
+                    <h2 class="section-heading">'.$caption.'</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>';
+
+	  echo '
       <div class="row">
           <div class="col-lg-8 col-lg-offset-2"> '.$text.'
           </div>
@@ -278,26 +280,10 @@ $LAYOUT['homepage'] =  '
 <!-- Services Section No.1 menu 1 + 11 12 13 -->
 <section id="ourservices" class="">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                {SETSTYLE=notitle}
-                {MENU=1}
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                {SETSTYLE=notitle}
-                {MENU=11}
-            </div>
-            <div class="col-md-4">
-                {SETSTYLE=notitle}
-                {MENU=12}
-            </div>
-            <div class="col-md-4">
-                {SETSTYLE=notitle}
-                {MENU=13}
-            </div>
-        </div>
+
+         	{SETSTYLE=notitle}
+        	{CHAPTER_MENUS: name=home-services}
+
     </div>
 </section>
 
@@ -319,32 +305,16 @@ $LAYOUT['homepage'] =  '
 <!-- About Section No.3 menu 3 + ...-->
 <section id="about">
     <div class="container">
-        <div class="row">           
-          <div class="col-lg-12 text-center">
-            {SETSTYLE=notitle}
-            {MENU=3} 
-					</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            {TIMELINEITEMS}
-          </div>
-        </div>
+           {CHAPTER_MENUS: name=timeline}
     </div>
 </section>
 
     <!-- Team Section Section N.4 - menu 4 -->
     <section id="team" class="bg-light-gray">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    {SETSTYLE=notitle}
-                		{MENU=4}
-                </div>
-            </div>
-            <div class="row">
-                {TEAMMEMBERS}
-            </div>
+
+              {CHAPTER_MENUS: name=our-team}
+
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <p class="large text-muted">'.e107::pref('theme', 'textafterteam','').'</p>
@@ -372,7 +342,7 @@ $LAYOUT['homepage'] =  '
                 		{MENU=5}
                 </div>
             </div>
-            <div class="row">
+            <div class="row"> {SETSTYLE=contact}
                 <div class="col-lg-12">
                     {AGENCY_CONTACTFORM}
                 </div>
