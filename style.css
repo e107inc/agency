@@ -126,3 +126,13 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
     color: #222;
     background-color: #fed136;
 }
+
+/*  login page */
+img.logo {
+    margin-top: -5px;
+    margin-right: 5px;
+}
+
+#login-template { max-width: 330px;  margin-right: auto;  margin-left: auto;     }
+#login-template h2.caption { text-align:center; font-size:120%; opacity:0.8 }
+#login-template .logo { padding-top:50px; margin-left:auto; margin-right: auto }
