@@ -123,7 +123,7 @@
 
 
 
-	$MENU_TEMPLATE['teammember']['start'] 				= '<div class="row"><div class="col-lg-12 text-center">
+	$MENU_TEMPLATE['teammember']['start'] 				= '{SETIMAGE: w=225&h=225&crop=1}<div class="row"><div class="col-lg-12 text-center">
 										                    <h2 class="section-heading">{CHAPTER_NAME}</h2>
 										                    <h3 class="section-subheading text-muted">{CHAPTER_DESCRIPTION}</h3>
 										                </div></div><div class="row">' ;

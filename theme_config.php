@@ -24,8 +24,8 @@ class theme_config implements e_theme_config
 			'headerbackground'  => array('title' => LAN_AG_THEMEPREF_03, 'type'=>'image', 'help'=>''),
 			'inlinecss'  				=> array('title' => LAN_THEMEPREF_01, 'type'=>'textarea', 'writeParms'=>array('size'=>'block-level'),'help'=>''),
 			'inlinejs'   				=> array('title' => LAN_THEMEPREF_02, 'type'=>'textarea', 'writeParms'=>array('size'=>'block-level'),'help'=>''),			
-			'cdn' => array('title' => 'CDN', 'type'=>'dropdown', 
-			'writeParms'=>array('optArray'=>array( 'cdnjs' => 'CDNJS (Cloudflare)', 'jsdelivr' => 'jsDelivr'  , 'local' => LAN_AG_THEMEPREF_04)))
+	//		'cdn' => array('title' => 'CDN', 'type'=>'dropdown',
+	//		'writeParms'=>array('optArray'=>array( 'cdnjs' => 'CDNJS (Cloudflare)', 'jsdelivr' => 'jsDelivr'  , 'local' => LAN_AG_THEMEPREF_04)))
  		);
 
 

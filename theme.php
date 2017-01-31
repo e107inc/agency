@@ -15,6 +15,7 @@ define('VIEWPORT', 		"width=device-width, initial-scale=1.0");
 
 e107::lan('theme');
 
+/*
 $cndPref = e107::pref('theme', 'cdn','local');
 
 switch($cndPref)
@@ -29,7 +30,12 @@ switch($cndPref)
     e107::js("footer", "https://cdn.jsdelivr.net/bootstrap/3.3.7/js/bootstrap.min.js", 'jquery', 2);
     e107::css('url', 'https://cdn.jsdelivr.net/bootstrap/3.3.7/css/bootstrap.min.css');
     e107::css('url',    'https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css');
-}
+}*/
+
+e107::library('load', 'bootstrap');
+e107::library('load', 'fontawesome');
+
+
 
 e107::js('url','https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js','','2','<!--[if lt IE 9]>','');
 e107::js('url','https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js','','2','','<![endif]-->'); 
