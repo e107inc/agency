@@ -1,6 +1,4 @@
 <?php
-
-
 	/*
 	 * e107 website system
 	 *
@@ -12,11 +10,8 @@
 	 *
 	*/
 
-
 	class theme_shortcodes extends e_shortcode
 	{
-
-
 
 		/**
 		 * Return raw HTML-usable values from page fields.
@@ -217,98 +212,6 @@
 
 		}
 
-
-		//@todo Completed - Replaced with template.
-		/* what is rewritten with this:
-		- set of use google or google-plus as key
-		- set textstart and textend
-		- body with $data values (key, url a title)
-		*//*
-	function sc_xurl_icons_disable()
-	{
-
-
-
-		$social = array(
-				'rss'             => array('href' => (e107::isInstalled('rss_menu') ? e107::url('rss_menu', 'index', array('rss_url' => 'news')) : ''), 'title' => 'RSS/Atom Feed'),
-				'facebook'        => array('href' => deftrue('XURL_FACEBOOK'), 'title' => 'Facebook'),
-				'twitter'         => array('href' => deftrue('XURL_TWITTER'), 'title' => 'Twitter'),
-				'google-plus'     => array('href' => deftrue('XURL_GOOGLE'), 'title' => 'Google Plus'),
-				'linkedin'        => array('href' => deftrue('XURL_LINKEDIN'), 'title' => 'LinkedIn'),
-				'github'          => array('href' => deftrue('XURL_GITHUB'), 'title' => 'Github'),
-				'pinterest'       => array('href' => deftrue('XURL_PINTEREST'), 'title' => 'Pinterest'),
-				'flickr'          => array('href' => deftrue('XURL_FLICKR'), 'title' => 'Flickr'),
-				'instagram'       => array('href' => deftrue('XURL_INSTAGRAM'), 'title' => 'Instagram'),
-				'youtube'         => array('href' => deftrue('XURL_YOUTUBE'), 'title' => 'YouTube'),
-				'question-circle' => array('href' => deftrue('XURL_VIMEO'), 'title' => 'e107 HELP')
-		);
-
-
-		$text = '';
-		$textstart = '<ul class="list-inline social-buttons">';
-		$textend = '</ul>';
-		foreach($social as $id => $data)
-		{
-			if($data['href'] != '')
-			{
-				$text .= '<li class="list-inline-item">
-             <a rel="external" href="' . $data['href'] . '" class="btn-social btn-outline"><i class="fa fa-' . $id . '"></i></a>';
-				$text .= "</li>\n";
-			}
-		}
-		if($text != '')
-		{
-			return $textstart . $text . $textend;
-		}
-
-	}*/
-
-		/* WORKAROUND for using just icon name */
-		/*	function sc_cmenu_button_text()
-		  {
-			$sc   = e107::getScBatch('page', null, 'cpage');
-			$data = $sc->getVars();
-			return vartrue($data['menu_button_text'],'');
-		   }*/
-
-
-/*
-		//@todo remove and place shortcode directly into theme.php
-		function sc_timelineitems()
-		{
-
-			return e107::getParser()->parseTemplate("{CHAPTER_MENUS: name=timeline}", true);
-
-					$template = e107::getCoreTemplate('chapter', 'timeline');
-				  $sc = e107::getScBatch('page', null, 'cpage');
-
-				// TO GET ID OF BOOK WITH TIMELINE
-					$where  = "chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'timeline'";
-					$book_id = e107::getDb()->retrieve('page_chapters', 'chapter_id',  $where);
-
-				// TO GET ALL PAGES, WITH THEIR CHAPTERS WITH BOOK TIMELINE
-					$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . intval($book_id) . " ORDER BY p.page_order DESC ";
-
-					$text = e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
-
-					if($pageArray = e107::getDb()->retrieve($query, true))
-					{
-						foreach($pageArray as $page)
-						{
-							$sc->setVars($page);
-							$text .= e107::getParser()->parseTemplate($template['listItems']['item'], true, $sc);
-						}
-					}
-					else
-					{
-						$text = '';
-					}
-
-					$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
-
-					return $text;
-		}
-*/
 		/**
 		 * @return string
 		 */
@@ -325,47 +228,7 @@
 			return e107::pref('theme', 'timelineendtext', '');
 		}
 
-
-		/*
-		//@todo remove and place shortcode directly into theme.php
-		function sc_teammembers()
-		{
-
-			return e107::getParser()->parseTemplate("{CHAPTER_MENUS: name=our-team}", true);
-
-
-					$template = e107::getCoreTemplate('chapter', 'teammember');
-				  $sc = e107::getScBatch('page', null, 'cpage');
-
-				// TO GET ID OF BOOK WITH TIMELINE
-					$where  = "chapter_visibility IN (" . USERCLASS_LIST . ") AND chapter_template = 'teammember'";
-					$book_id = e107::getDb()->retrieve('page_chapters', 'chapter_id',  $where);
-
-				// TO GET ALL PAGES, WITH THEIR CHAPTERS WITH BOOK TIMELINE
-					$query = "SELECT * FROM #page AS p LEFT JOIN #page_chapters as ch ON p.page_chapter=ch.chapter_id WHERE ch.chapter_parent = " . intval($book_id) . " ORDER BY p.page_order DESC ";
-
-					$text = e107::getParser()->parseTemplate($template['listItems']['start'], true, $sc);
-
-					if($pageArray = e107::getDb()->retrieve($query, true))
-					{
-						foreach($pageArray as $page)
-						{
-							$sc->setVars($page);
-							$text .= e107::getParser()->parseTemplate($template['listItems']['item'], true, $sc);
-						}
-					}
-					else
-					{
-						$text = '';
-					}
-
-					$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
-
-					return $text;
-
-		}
-*/
-
+ 
 		function sc_sitedisclaimer($copyYear = null)
 		{
 			$default = "Proudly powered by <a href='http://e107.org'>e107</a> which is released under the terms of the GNU GPL License.";
