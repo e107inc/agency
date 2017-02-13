@@ -131,7 +131,7 @@ function tablestyle($caption, $text, $id='', $info=array())
 
 		echo '<div class="col-lg-12 text-center">
                     <h2 class="section-heading">'.$caption.'</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">'.e107::pref('theme', 'contactsubtitle','').'</h3>
                 </div>';
 
 	  echo '

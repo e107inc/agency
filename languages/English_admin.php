@@ -14,6 +14,7 @@ define("LAN_AG_THEMEPREF_01", "Last text in Timeline");
 define("LAN_AG_THEMEPREF_02", "Text after Teammembers section");
 define("LAN_AG_THEMEPREF_03", "Big header image [1900x1250]");
 define("LAN_AG_THEMEPREF_04", "Local folder");
+define("LAN_AG_THEMEPREF_05", "Subtitle for Contact section");
 
 /*  universal theme LANs don't remove them please */
 define("LAN_THEMEPREF_01", "Inline CSS <br> between head tags");
