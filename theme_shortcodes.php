@@ -207,7 +207,7 @@
 			}
 			else
 			{
-				$text = LAN_AG_THEME_14;
+				$text = null; // $text = LAN_AG_THEME_14;
 			}
 
 			$text .= e107::getParser()->parseTemplate($template['listItems']['end'], true, $sc);
