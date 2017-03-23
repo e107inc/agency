@@ -17,8 +17,8 @@ define("LAN_AG_THEMEPREF_04", "Local folder");
 define("LAN_AG_THEMEPREF_05", "Subtitle for Contact section");
 
 /*  universal theme LANs don't remove them please */
-define("LAN_THEMEPREF_01", "Inline CSS <br> between head tags");
-define("LAN_THEMEPREF_02", "Inline JS <br> after body tag");
+define("LAN_AG_THEMEPREF_06", "Inline CSS <br> between head tags");
+define("LAN_AG_THEMEPREF_07", "Inline JS <br> after body tag");
 
 
 
