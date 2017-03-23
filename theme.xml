@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e107Theme name="Agency" version="2.0.1" date="2017-03-19" compatibility="2.1.5">
-	<author name ="Jimako" email="" url="http://e107.sk" />
+	<author name ="e107 Inc" email="e107inc@something.com" url="https://github.com/e107inc/agency" />
 	<summary>Start Bootstrap - Agency Bootstrap 3 e107 theme</summary>
 	<description>Agency is an agency portfolio theme for Bootstrap created by Start Bootstrap. This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a responsive timeline.</description>
 	<category>generic</category>
