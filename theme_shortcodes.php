@@ -256,7 +256,7 @@
 				return "";
 			}
 			else 
-			{
+			{ 
 				e107::lan('core', 'contact');
 				$head = '<form id="contact-menu" action="'.e_HTTP.'contact.php" method="post" >';
 				$template = e107::getCoreTemplate('contact', 'homepage');
@@ -266,7 +266,33 @@
 				return e107::getRender()->tablerender(LANCONTACT_00, $text, 'contact-menu');
 			}
 		}
+
+		//to have one header 
+		// {THEME_NAVBARTYPE} 
+		function sc_theme_navbartype() {
+			// for multipage purpose
+			$navbartype = 'navbar-inverse';
+			if(THEME_LAYOUT == 'homepage'  )
+			{
+			$navbartype = "navbar-default ";
+			}
+			return $navbartype;
+		}
+
+
+		function sc_theme_pref($parm = array()) 
+		{ 
+			$name = $parm['name'];   
+			if(!isset($name)) 
+			{ 
+				return ""; 
+			} 
+			$default = varset($parm['default'], '');
+			$value = e107::pref('theme', 'textafterteam', $default); 
+ 
+			return $value; 
+		}
 	}
 
 
-?>
+ 

@@ -191,24 +191,9 @@ $NEWS_TEMPLATE['view']['item'] = '
 
 ';
 
-/*
- * 	<hr />
-	<h3>About the Author</h3>
-	<div class="media">
-			<div class="media-left">{SETIMAGE: w=80&h=80&crop=1}{NEWS_AUTHOR_AVATAR: shape=circle}</div>
-			<div class="media-body">
-				<h4>{NEWS_AUTHOR}</h4>
-					{NEWS_AUTHOR_SIGNATURE}
-					<a class="btn btn-xs btn-primary" href="{NEWS_AUTHOR_ITEMS_URL}">My Articles</a>
-			</div>
-	</div>
- */
-
-
-//$NEWS_MENU_TEMPLATE['view']['separator']   = '<br />';
-
-
+ 
 ###### news_categories.sc 
+$NEWS_TEMPLATE['category']['caption'] = '{NEWSCATEGORY}';
 $NEWS_TEMPLATE['category']['body'] = '
 	<div style="padding:5px"><div style="border-bottom:1px inset black; padding-bottom:1px;margin-bottom:5px">
 	{NEWSCATICON}&nbsp;{NEWSCATEGORY}
@@ -240,5 +225,5 @@ $NEWS_TEMPLATE['related']['item'] = "<li><a href='{RELATED_URL}'>{RELATED_TITLE}
 $NEWS_TEMPLATE['related']['end'] = "</ul>";*/
 
 $NEWS_TEMPLATE['related']['start'] = '{SETIMAGE: w=350&h=350&crop=1}<h2 class="caption">'.LAN_AG_THEME_16.'</h2><div class="row">';
-$NEWS_TEMPLATE['related']['item'] = '<div class="col-md-4"><a href="{RELATED_URL}">{RELATED_IMAGE}</a><h3><a href="{RELATED_URL}">{RELATED_TITLE}</a></h3></div>';
+$NEWS_TEMPLATE['related']['item'] = '<div class="col-md-4"><a href="{RELATED_URL}">{RELATED_IMAGE}</a><h4><a href="{RELATED_URL}">{RELATED_TITLE}</a></h4></div>';
 $NEWS_TEMPLATE['related']['end'] = '</div>';

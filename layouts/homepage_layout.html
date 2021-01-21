@@ -1,0 +1,90 @@
+
+ 
+<header>
+    <div class="container">
+        <div class="intro-text">
+			{ALERTS}
+			{SETSTYLE=main}                               
+            {SETSTYLE=wm}
+            {---}             
+        </div>
+    </div>
+</header>  
+		      
+<div class="container">
+  {ALERTS}
+</div>
+
+<!-- Services Section No.1 menu 1 + 11 12 13 -->
+<section id="ourservices" class="">
+    <div class="container">
+
+         	{SETSTYLE=notitle}
+        	{CHAPTER_MENUS: name=home-services}
+
+    </div>
+</section>
+<!-- Portfolio Grid Section No.2 -->
+<section id="portfolio" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                {SETSTYLE=notitle}
+                {MENU=2}
+            </div>
+        </div> 	
+				<div class="row">					    
+					{PORTFOLIOITEMS}
+				</div>
+   </div>
+</section>
+
+<!-- About Section No.3 menu 3 + ...-->
+<section id="about">
+    <div class="container">
+           {CHAPTER_MENUS: name=timeline}
+    </div>
+</section>
+
+
+<!-- Team Section Section N.4 - menu 4 -->
+<section id="team" class="bg-light-gray">
+	<div class="container">
+
+			{CHAPTER_MENUS: name=our-team}
+
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<p class="large text-muted">{THEME_PREF: name=textafterteam}</p>
+			</div>
+		</div>
+	</div>
+</section>
+	
+
+<!-- Clients Aside Section N. 5 -->
+<aside class="clients">
+    <div class="container">
+        <div class="row">
+            {SETSTYLE=notitle}
+            {GALLERY_PORTFOLIO: category=2&limit=4}             
+        </div>
+    </div>
+</aside>
+
+<!-- Contact Section -->
+<section id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				{SETSTYLE=notitle}
+					{MENU=5}
+			</div>
+		</div>
+		<div class="row"> {SETSTYLE=contact}
+			<div class="col-lg-12">
+				{AGENCY_CONTACTFORM}
+			</div>
+		</div>
+	</div>
+</section>  
